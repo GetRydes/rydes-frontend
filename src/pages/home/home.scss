@@ -1,27 +1,6 @@
 .home {
   margin: 0;
-}
-
-.background {
-  display: flex;
-  align-items: center;
   height: 100vh;
-  width: 100vw;
-  z-index: -1;
-  position: fixed;
-}
-
-.gradient {
-  background-color: #1fc8db;
-  background-image: linear-gradient(60deg, #c5fdfe 0%, #ffbabd 90%);
-  flex: 0.7;
-  height: 100vh;
-}
-
-.black {
-  background-color: black;
-  height: 100vh;
-  flex: 0.3;
 }
 
 .logo {
@@ -46,6 +25,10 @@ header {
   align-items: center;
   justify-content: space-between;
   width: 400px;
+
+  @media screen and (max-width: 760px) {
+    display: none;
+  }
 }
 
 nav {
@@ -64,57 +47,6 @@ nav {
 
 .get-started {
   padding: 15px 25px;
-  background-color: #ffd7d9;
-  color: black;
+  background-color: #0d9648;
   font-weight: 600;
-}
-
-.hero {
-  max-width: 1800px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 100px;
-  height: calc(100vh - 110px);
-  overflow: hidden;
-}
-
-.hero-left {
-  max-width: 700px;
-  h1 {
-    font-size: 80px;
-    margin-bottom: 30px;
-    line-height: 110%;
-  }
-
-  h3 {
-    font-weight: normal;
-    font-size: 20px;
-    margin-bottom: 40px;
-  }
-
-  .store-icons {
-    display: flex;
-    align-items: center;
-    width: 200px;
-    margin-left: -10px;
-
-    img {
-      height: 100%;
-      width: 100%;
-    }
-
-    & > img:nth-child(2) {
-      height: 53px;
-    }
-  }
-}
-
-.hero-right {
-  height: 100%;
-
-  img {
-    height: 100%;
-  }
 }

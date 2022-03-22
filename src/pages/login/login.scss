@@ -1,0 +1,19 @@
+.auth {
+  background-color: #855aaf;
+  background: linear-gradient(60deg, #0d964888 0%, #c5fdfeaa 100%);
+  padding: 8px 12px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .auth-container {
+    max-width: 420px;
+    width: 100%;
+    margin: auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 42px #00000029;
+    padding: 20px 12px;
+    position: relative;
+  }
+}

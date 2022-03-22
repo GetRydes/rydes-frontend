@@ -1,13 +1,10 @@
 import Header from "./components/Header";
-import Hero from "./components/Hero";
+import Hero from "./components/Hero/Hero";
+import "./home.scss";
 
 const Home = () => {
   return (
     <div className="home">
-      <div className="background">
-        <div className="gradient" />
-        <div className="black" />
-      </div>
       <Header />
       <Hero />
     </div>
