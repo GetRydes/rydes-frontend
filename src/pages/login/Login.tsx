@@ -10,7 +10,11 @@ const Login = () => {
   const [activeState, setActiveState] = useState(0);
   const [loading, setLoading] = useState(false);
 
-  const onFormSubmit = () => {};
+  const onFormSubmit = () => {
+    setErrors({});
+    setActiveState(0);
+    setLoading(false);
+  };
 
   const onInputBlur = (e: any) => {};
 
