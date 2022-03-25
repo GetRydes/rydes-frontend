@@ -1,0 +1,5 @@
+.ride {
+  display: grid;
+  grid-template-columns: 400px calc(100% - 400px);
+  gap: 0;
+}

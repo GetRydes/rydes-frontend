@@ -3,7 +3,10 @@ import Maps from "../common/sections/ride/map/Map";
 const Ride = () => {
   return (
     <div>
-      <Maps />
+      <div className="ride">
+        <div></div>
+        <Maps />
+      </div>
     </div>
   );
 };
