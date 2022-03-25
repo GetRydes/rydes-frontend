@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Hero.scss";
 import TabHeader from "./TabHeader";
 
@@ -8,8 +9,8 @@ const Hero = () => {
         <div className="hero__inner-bg">
           <div className="hero__inner-bg--inner">
             <img
-              src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,w_1407,h_667/v1613521435/assets/bc/0529b6-c37a-416b-9907-2cb44c4c2888/original/Earner_Home_bg_desktop2x.png"
-              alt=""
+              src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,w_1903,h_644/v1613521692/assets/d9/ce6c00-32b0-4b93-9f0d-6f927d93da08/original/Rider_Home_bg_desktop2x.png"
+              alt="Rider"
             />
           </div>
         </div>
@@ -37,11 +38,13 @@ const Hero = () => {
                             </div>
                             <div className="location__fields--icons"></div>
                           </div>
-                          <div className="action__buttons">
-                            <div className="action__buttons--request">
-                              <div>Request now</div>
+                          <Link to="/ride">
+                            <div className="action__buttons">
+                              <div className="action__buttons--request">
+                                <div>Request now</div>
+                              </div>
                             </div>
-                          </div>
+                          </Link>
                         </div>
                       </div>
                     </div>

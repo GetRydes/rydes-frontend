@@ -1,6 +1,5 @@
-import Header from "./components/Header";
-import Hero from "./components/Hero/Hero";
-import "./home.scss";
+import Header from "../common/sections/home/Header";
+import Hero from "../common/sections/home/Hero/Hero";
 
 const Home = () => {
   return (

@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import "./Spinner.scss";
 
@@ -7,15 +6,15 @@ const defaultProps = {
   type: "default",
   color: "#ffffff",
   size: 15,
-};
+} as const;
 
-const propTypes = {
-  type: PropTypes.oneOf(["default", "alternate"]),
-  color: PropTypes.string,
-  size: PropTypes.number,
-};
+interface propTypes {
+  type?: "default" | "alternate";
+  color?: string;
+  size?: number;
+}
 
-const Spinner = (props: any) => {
+const Spinner: React.FC<propTypes> = (props = defaultProps) => {
   return (
     <div
       style={{
@@ -27,8 +26,5 @@ const Spinner = (props: any) => {
     />
   );
 };
-
-Spinner.defaultProps = defaultProps;
-Spinner.propTypes = propTypes;
 
 export default Spinner;

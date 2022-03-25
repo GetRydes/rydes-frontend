@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Button } from "../../common/elements";
-import "./register.scss";
+import { Button } from "../common/elements";
 
-const Register = () => {
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState<any>({});
@@ -25,47 +24,6 @@ const Register = () => {
           <h4>rydes.</h4>
         </Link>
         <form onSubmit={onFormSubmit}>
-          <div className="name-container">
-            <div className="form-content">
-              <label>First Name</label>
-              <input
-                type="text"
-                placeholder="Jack"
-                required
-                name="firstName"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className={errors.email && "invalid"}
-                onBlur={(e) => onInputBlur(e)}
-              />
-            </div>
-            <div className="form-content">
-              <label>Last Name</label>
-              <input
-                type="text"
-                placeholder="Robinson"
-                required
-                name="lastName"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className={errors.email && "invalid"}
-                onBlur={(e) => onInputBlur(e)}
-              />
-            </div>
-          </div>
-          <div className="form-content">
-            <label>Phone Number</label>
-            <input
-              type="number"
-              placeholder="08093631469"
-              required
-              name="lastName"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className={errors.email && "invalid"}
-              onBlur={(e) => onInputBlur(e)}
-            />
-          </div>
           <div className="form-content">
             <label>Email Address</label>
             <input
@@ -108,4 +66,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Login;
