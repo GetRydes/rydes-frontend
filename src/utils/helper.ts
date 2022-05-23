@@ -1,4 +1,4 @@
-export const getActivePosition = (callback) => {
+export const getActivePosition = (callback: any) => {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
       (position) => {

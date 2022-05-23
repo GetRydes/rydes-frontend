@@ -1,12 +1,11 @@
-import Header from "../common/sections/home/Header";
+import DefaultLayout from "../common/layouts/default";
 import Hero from "../common/sections/home/Hero/Hero";
 
 const Home = () => {
   return (
-    <div className="home">
-      <Header />
+    <DefaultLayout>
       <Hero />
-    </div>
+    </DefaultLayout>
   );
 };
 

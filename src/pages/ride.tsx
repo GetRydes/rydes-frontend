@@ -1,13 +1,15 @@
+import DefaultLayout from "../common/layouts/default";
 import Maps from "../common/sections/ride/map/Map";
+import RideDetails from "../common/sections/ride/ride-details/ride-details";
 
 const Ride = () => {
   return (
-    <div>
+    <DefaultLayout>
       <div className="ride">
-        <div></div>
+        <RideDetails />
         <Maps />
       </div>
-    </div>
+    </DefaultLayout>
   );
 };
 

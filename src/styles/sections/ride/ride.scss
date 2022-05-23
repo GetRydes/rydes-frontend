@@ -1,5 +1,67 @@
 .ride {
   display: grid;
-  grid-template-columns: 400px calc(100% - 400px);
+  grid-template-columns: 406px calc(100% - 406px);
   gap: 0;
+
+  & > div:nth-child(2) {
+    height: calc(100vh - 111px) !important;
+  }
+
+  .ride-details {
+    padding: 40px 30px;
+
+    &--text {
+      padding: 16px 0;
+      position: relative;
+      color: rgb(0, 0, 0);
+      display: none;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 24px;
+      box-sizing: border-box;
+
+      @media screen and (min-width: 600px) {
+        display: block;
+        font-size: 30px;
+        font-weight: 500;
+        line-height: 44px;
+      }
+    }
+
+    .input-fields {
+      position: relative;
+
+      &--icons {
+        left: 22px;
+        bottom: 33px;
+        top: 33px;
+        background-color: #000000;
+        position: absolute;
+        width: 1px;
+
+        &::before {
+          background-color: #f6f6f6;
+          border: 1px solid #000000;
+          bottom: -10px;
+          height: 5px;
+          width: 5px;
+          left: -3px;
+          position: absolute;
+          content: "";
+        }
+
+        &::after {
+          background-color: #f6f6f6;
+          border: 1px solid #000000;
+          border-radius: 50%;
+          top: -10px;
+          height: 6px;
+          width: 6px;
+          left: -3px;
+          position: absolute;
+          content: "";
+        }
+      }
+    }
+  }
 }

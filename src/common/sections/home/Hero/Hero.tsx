@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Input } from "../../../elements";
 import "./Hero.scss";
 import TabHeader from "./TabHeader";
 
@@ -30,12 +31,11 @@ const Hero = () => {
                             <h2>Request a ride now</h2>
                           </div>
                           <div className="location__fields">
-                            <div className="location__fields--combobox">
-                              <input placeholder="Enter pickup location" />
-                            </div>
-                            <div className="location__fields--combobox destination">
-                              <input placeholder="Enter destination" />
-                            </div>
+                            <Input placeholder="Enter pickup location" />
+                            <Input
+                              classname="destination"
+                              placeholder="Enter destination"
+                            />
                             <div className="location__fields--icons"></div>
                           </div>
                           <Link to="/ride">
