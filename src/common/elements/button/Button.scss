@@ -7,8 +7,7 @@
 .btn {
   font-family: $secondary-font;
   background: transparent;
-  border-radius: 2px;
-  padding: 8px 15px;
+  padding: 15px 25px;
   color: white;
   cursor: pointer;
   display: flex;
@@ -30,18 +29,11 @@
   outline: none;
   position: relative;
   text-decoration: none;
-
-  -webkit-box-shadow: -3px 21px 42px -38px rgba(86, 128, 249, 1);
-  -moz-box-shadow: -3px 21px 42px -38px rgba(86, 128, 249, 1);
-  box-shadow: -3px 21px 42px -38px rgba(86, 128, 249, 1);
+  width: 100%;
 
   &.primary {
-    background: $primary-color;
+    background: #222;
     transition: 0.3s ease;
-
-    &:hover {
-      background: $primary-color-dark;
-    }
   }
 
   &.danger {

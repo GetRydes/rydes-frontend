@@ -2,11 +2,7 @@ import "./App.scss";
 import Router from "./Router";
 
 const App = () => {
-  return (
-    <div>
-      <Router />
-    </div>
-  );
+  return <Router />;
 };
 
 export default App;

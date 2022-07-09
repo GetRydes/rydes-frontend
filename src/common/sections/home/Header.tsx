@@ -19,7 +19,7 @@ const Header = () => {
         </nav>
       </div>
       <div className="action-links">
-        <Link to="/login">Sign in</Link>
+        <Link to="/signin">Sign in</Link>
         <Link to="/register">
           <div className="get-started">Get started</div>
         </Link>
