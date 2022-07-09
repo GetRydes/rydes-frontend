@@ -4,8 +4,6 @@ import { Button } from "../common/elements";
 import AuthLayout from "../common/layouts/auth";
 
 const Register = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [errors, setErrors] = useState<any>({});
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState<{ [key: string]: any }>({});
