@@ -1,7 +1,8 @@
 import { useState } from "react";
-import FormBuilder from "../common/components/form-builder";
-import { Button } from "../common/elements";
-import AuthLayout from "../common/layouts/auth";
+import FormBuilder from "../../common/components/form-builder";
+import { Button } from "../../common/elements";
+import AuthLayout from "../../common/layouts/auth";
+import "./register.scss";
 
 const Register = () => {
   const [errors, setErrors] = useState<any>({});
@@ -16,7 +17,7 @@ const Register = () => {
   const onInputBlur = (e: any) => {};
 
   return (
-    <AuthLayout>
+    <AuthLayout className="register">
       <div className="form form--register">
         <div className="info info-centre">
           <div className="qa-subtitle">Sign up with...</div>

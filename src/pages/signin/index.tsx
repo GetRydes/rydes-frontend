@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import FormBuilder from "../common/components/form-builder";
-import { Button } from "../common/elements";
-import AuthLayout from "../common/layouts/auth";
+import FormBuilder from "../../common/components/form-builder";
+import { Button } from "../../common/elements";
+import AuthLayout from "../../common/layouts/auth";
+import "./signin.scss";
 
 const Login = () => {
   const [errors, setErrors] = useState<any>({});
@@ -17,7 +18,7 @@ const Login = () => {
   const onInputBlur = (e: any) => {};
 
   return (
-    <AuthLayout>
+    <AuthLayout className="signin">
       <div className="form form--login">
         <form onSubmit={onFormSubmit}>
           <FormBuilder

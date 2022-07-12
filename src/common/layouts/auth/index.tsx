@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { AuthLayoutProps } from "./types";
 
-const AuthLayout: React.FC<AuthLayoutProps> = ({ children }) => {
+const AuthLayout: React.FC<AuthLayoutProps> = ({ children, className }) => {
   const location = useLocation();
   const routes = [
     {
@@ -16,7 +16,7 @@ const AuthLayout: React.FC<AuthLayoutProps> = ({ children }) => {
   ];
 
   return (
-    <main className="layout--auth">
+    <main className={`layout--auth ${className ?? ""}`}>
       <div className="layout--auth__container">
         <div className="layout--auth__container--header">
           <h1 className="layout--auth__container--header__logo">
