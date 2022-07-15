@@ -1,4 +1,4 @@
 export interface AuthLayoutProps {
-  children?: JSX.Element | JSX.Element[];
-  className?: string;
+   children?: JSX.Element | JSX.Element[];
+   className?: string;
 }

@@ -1,4 +1,4 @@
 export type ActionProps = {
-  type: "LOGIN";
-  payload: any;
+   type: "LOGIN";
+   payload: any;
 };
