@@ -1,24 +1,24 @@
 @import "../../../styles/global.scss";
 
 .btn-main {
-  background: blue;
+   background: blue;
 }
 
 .btn {
-  font-family: $secondary-font;
-  background: transparent;
-  padding: 15px 25px;
-  color: white;
-  cursor: pointer;
-  display: flex;
-  align-items: center !important;
-  justify-content: center !important;
-  border: 1px solid transparent;
+   font-family: $secondary-font;
+   background: transparent;
+   padding: 15px 25px;
+   color: white;
+   cursor: pointer;
+   display: flex;
+   align-items: center !important;
+   justify-content: center !important;
+   border: 1px solid transparent;
 }
 
 .disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
+   opacity: 0.6;
+   cursor: not-allowed;
 }
 
 .btn:focus,
@@ -26,86 +26,86 @@
 .btn-sml:focus,
 .btn-sml:active,
 .btn {
-  outline: none;
-  position: relative;
-  text-decoration: none;
-  width: 100%;
+   outline: none;
+   position: relative;
+   text-decoration: none;
+   width: 100%;
 
-  &.primary {
-    background: #222;
-    transition: 0.3s ease;
-  }
+   &.primary {
+      background: #222;
+      transition: 0.3s ease;
+   }
 
-  &.danger {
-    background: $danger-color;
-    transition: 0.3s ease;
-    &:hover {
-      background: $danger-color-dark;
-    }
-  }
+   &.danger {
+      background: $danger-color;
+      transition: 0.3s ease;
+      &:hover {
+         background: $danger-color-dark;
+      }
+   }
 
-  &.success {
-    background: $success-color;
-    transition: 0.3s ease;
-    &:hover {
-      background: $success-color-dark;
-    }
-  }
+   &.success {
+      background: $success-color;
+      transition: 0.3s ease;
+      &:hover {
+         background: $success-color-dark;
+      }
+   }
 
-  &.default {
-    background: $white-color;
-    color: $black-color;
-    box-shadow: 0 2px 5px rgba($black-color, 0.1);
-    transition: 0.3s ease;
-    &:hover {
-      background: $color-text-lighter;
-    }
-  }
+   &.default {
+      background: $white-color;
+      color: $black-color;
+      box-shadow: 0 2px 5px rgba($black-color, 0.1);
+      transition: 0.3s ease;
+      &:hover {
+         background: $color-text-lighter;
+      }
+   }
 
-  &.loading {
-    opacity: 0.7;
+   &.loading {
+      opacity: 0.7;
 
-    & > span {
-      margin-right: 6px;
-    }
-  }
+      & > span {
+         margin-right: 6px;
+      }
+   }
 
-  &:hover {
-    cursor: pointer;
-  }
+   &:hover {
+      cursor: pointer;
+   }
 
-  &:disabled,
-  .disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-  }
+   &:disabled,
+   .disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+   }
 
-  &:active,
-  &:focus {
-    outline: none !important;
-    border: none !important;
-  }
+   &:active,
+   &:focus {
+      outline: none !important;
+      border: none !important;
+   }
 
-  &.block {
-    width: 100%;
-    display: block;
-  }
+   &.block {
+      width: 100%;
+      display: block;
+   }
 
-  .icon-left {
-    padding-right: 10px;
-  }
+   .icon-left {
+      padding-right: 10px;
+   }
 
-  .content {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-  }
+   .content {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+   }
 }
 
 .spinner {
-  &.danger {
-    .lds-dual-ring {
-      color: $danger-color !important;
-    }
-  }
+   &.danger {
+      .lds-dual-ring {
+         color: $danger-color !important;
+      }
+   }
 }
