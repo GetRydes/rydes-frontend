@@ -1,0 +1,178 @@
+.layout--auth {
+   &.signin {
+      .form {
+         margin: 50px auto 0;
+         padding: 0 6% 0 6%;
+         width: 88%;
+         border: none;
+
+         &--login {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 15px;
+         }
+
+         form {
+            padding: 0 12.5%;
+         }
+
+         .form-content {
+            &:not(:last-child) {
+               margin-bottom: 19px;
+            }
+
+            label {
+               display: block;
+               font-style: normal;
+               font-weight: 700;
+               text-transform: uppercase;
+               margin: 0 3% 11px 0;
+               min-width: 20%;
+               font-size: 14px;
+               color: #767676;
+               letter-spacing: 2px;
+               line-height: 1.7;
+            }
+
+            input {
+               padding: 12px 10px;
+               font-size: 14px;
+               width: 100%;
+               border: 1px solid #767676;
+
+               &:focus,
+               &:focus-within {
+                  outline: none;
+               }
+            }
+         }
+
+         .forgot-password {
+            margin-top: 22px;
+            text-align: center;
+            font-size: 13px;
+            position: relative;
+
+            a {
+               font-style: normal;
+               font-weight: 400;
+               font-size: 13px;
+               line-height: 1.5;
+               letter-spacing: 0.4px;
+               text-decoration: none;
+            }
+         }
+      }
+
+      .info {
+         padding: 0 25px 10px;
+         margin-top: 0px;
+         margin-bottom: 30px;
+
+         &-center {
+            max-width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            overflow-y: visible;
+         }
+
+         .qa-subtitle {
+            margin: 40px auto 40px;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 1.2;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 2.3px;
+         }
+
+         .clear {
+            height: 1px;
+            clear: both;
+            width: 100%;
+         }
+
+         .options {
+            max-width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            cursor: pointer;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0 10px;
+
+            .social-links-container {
+               margin: 0 auto;
+               height: 75px;
+               min-width: 264px;
+
+               ul {
+                  width: 400px;
+                  padding: 0;
+                  display: grid;
+                  grid-template-columns: repeat(2, 1fr);
+                  gap: 12px;
+                  margin: 0 auto;
+
+                  li {
+                     height: 50px;
+                     position: relative;
+                     flex: 1;
+                     border: solid 2px #ddd;
+                     display: flex;
+                     align-items: center;
+                     justify-content: center;
+
+                     a {
+                        color: #2d2d2d;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        span {
+                           color: #2d2d2d;
+                           letter-spacing: 0.6px;
+                           font-weight: 600;
+                           font-style: normal;
+                           font-stretch: normal;
+                           font-size: 16px;
+                        }
+                     }
+                  }
+
+                  .social-link {
+                     .connect {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 20px;
+                     }
+                     .icon {
+                        background-repeat: no-repeat;
+                        background-position: 100% center;
+                        background-size: 18px;
+                        width: 18px;
+                        height: 48px;
+                        left: 0;
+                        top: 0;
+                        background-clip: padding-box;
+                        padding-left: 7px;
+                     }
+
+                     .facebook .icon {
+                        background-image: url("../../images/facebook.png");
+                     }
+
+                     .google .icon {
+                        background-image: url("../../images/google.svg");
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}

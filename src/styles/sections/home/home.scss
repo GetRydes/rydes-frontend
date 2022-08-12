@@ -1,52 +1,52 @@
 .home {
-  margin: 0;
-  height: 100vh;
+   margin: 0;
+   height: 100vh;
 }
 
 .logo {
-  font-weight: 600;
-  a {
-    font-size: 20px;
-  }
+   font-weight: 600;
+   a {
+      font-size: 20px;
+   }
 }
 
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 30px;
-  width: 100%;
-  max-width: 1800px;
-  margin: 0 auto;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 30px;
+   width: 100%;
+   max-width: 1800px;
+   margin: 0 auto;
 }
 
 .nav-links {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 400px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   width: 400px;
 
-  @media screen and (max-width: 760px) {
-    display: none;
-  }
+   @media screen and (max-width: 760px) {
+      display: none;
+   }
 }
 
 nav {
-  font-weight: 600;
+   font-weight: 600;
 }
 
 .action-links {
-  display: flex;
-  color: white;
-  align-items: center;
+   display: flex;
+   color: white;
+   align-items: center;
 
-  & > a:first-child {
-    margin-right: 30px;
-  }
+   & > a:first-child {
+      margin-right: 30px;
+   }
 }
 
 .get-started {
-  padding: 15px 25px;
-  background-color: #0d9648;
-  font-weight: 600;
+   padding: 15px 25px;
+   background-color: #0d9648;
+   font-weight: 600;
 }
