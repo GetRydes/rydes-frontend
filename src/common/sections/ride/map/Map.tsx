@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import GoogleMapReact from "google-map-react";
 import { getActivePosition } from "../../../../utils/helper";
 import { Spinner } from "../../../components";
+import "./map.scss";
 
 const AnyReactComponent = ({ text }: any) => (
    <div>
@@ -24,7 +25,7 @@ const Maps = () => {
    return loading ? (
       <Spinner size={40} />
    ) : (
-      <div style={{ height: "100vh", width: "100%" }}>
+      <div className="map">
          <GoogleMapReact
             bootstrapURLKeys={{
                key: "AIzaSyDTpDMmyWINZhlX-zFNEXltuDmQ9WLhBuQ",
