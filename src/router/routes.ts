@@ -5,7 +5,7 @@ const Routes = [
       name: "ride",
       path: "/ride",
       Component: Ride,
-      isProtected: true,
+      isProtected: false,
    },
    {
       name: "register",
