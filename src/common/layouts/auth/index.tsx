@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { AuthLayoutProps } from "./types";
+import "./auth.scss";
 
 const AuthLayout: React.FC<AuthLayoutProps> = ({ children, className }) => {
    const location = useLocation();
