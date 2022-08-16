@@ -1,9 +1,12 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Input } from "../../../elements";
 import "./Hero.scss";
 import TabHeader from "./TabHeader";
 
 const Hero = () => {
+   const [activeTab, setActiveTab] = useState(0);
+
    return (
       <section className="hero">
          <div className="hero__inner">
@@ -19,7 +22,7 @@ const Hero = () => {
                <div className="hero__inner-content--container">
                   <div style={{ width: "100%" }}>
                      <div className="hero__inner-content--container__tabs">
-                        <TabHeader />
+                        <TabHeader activeTab={activeTab} setActiveTab={setActiveTab} />
                      </div>
                      <div className="hero__inner-content--container__tabs--content">
                         <div className="tab__item">

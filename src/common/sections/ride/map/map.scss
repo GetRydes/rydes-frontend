@@ -1,0 +1,15 @@
+.map {
+   background-color: rgb(226, 226, 226);
+   display: block;
+   height: 44vh;
+   left: 0px;
+   position: fixed;
+   right: 0px;
+   top: 0px;
+
+   @media (min-width: 600px) {
+      display: block;
+      height: 100%;
+      position: static;
+   }
+}

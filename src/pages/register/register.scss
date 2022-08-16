@@ -1,8 +1,14 @@
 .layout--auth {
    &.register {
+      .layout--auth__container {
+         min-height: 100vh;
+         height: fit-content;
+         padding-bottom: 64px;
+      }
+
       .form {
-         margin: 50px auto 0;
-         padding: 0 6% 0 6%;
+         margin: 0 auto;
+         padding: 0 6% 30px 6%;
          width: 88%;
          border: none;
 
@@ -10,6 +16,18 @@
             margin-left: auto;
             margin-right: auto;
             margin-top: 15px;
+         }
+
+         .qa-use-email {
+            margin: 40px 0 40px 0;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 1.2;
+            // letter-spacing: 2.5px;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 2.3px;
          }
 
          form {
@@ -65,9 +83,9 @@
       }
 
       .info {
-         padding: 0 25px 10px;
+         padding: 0 25px;
          margin-top: 0px;
-         margin-bottom: 30px;
+         // margin-bottom: 30px;
 
          &-center {
             max-width: 100%;
@@ -88,6 +106,14 @@
             letter-spacing: 2.3px;
          }
 
+         #registration-subtitle {
+            .subtitle {
+               font-size: 14px;
+               line-height: 1.5;
+               letter-spacing: 0.4px;
+            }
+         }
+
          .clear {
             height: 1px;
             clear: both;
@@ -101,12 +127,12 @@
             text-align: center;
             cursor: pointer;
             margin-top: 10px;
-            margin-bottom: 10px;
+            margin-bottom: 16px;
             padding: 0 10px;
 
             .social-links-container {
                margin: 0 auto;
-               height: 75px;
+               // height: 75px;
                min-width: 264px;
 
                ul {

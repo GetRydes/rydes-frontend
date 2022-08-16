@@ -1,9 +1,14 @@
 import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
+import "./header.scss";
 
-const Header = () => {
+interface HeaderProps {
+   hasMobileOverlayNav?: Boolean;
+}
+
+const Header: React.FC<HeaderProps> = ({ hasMobileOverlayNav = false }) => {
    return (
-      <header>
+      <header className={`${hasMobileOverlayNav ? "mobile-overlay" : ""}`}>
          <div className="logo">
             <Link to="/">rydes.</Link>
          </div>
