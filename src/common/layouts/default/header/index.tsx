@@ -1,32 +1,29 @@
-import { NavLink } from "react-router-dom";
-import { Link } from "react-router-dom";
-import "./header.scss";
+import { Link, NavLink } from "react-router-dom";
+import clx from "classnames";
+import styles from "./header.module.scss";
+import { HeaderProps } from "./types";
 
-interface HeaderProps {
-   hasMobileOverlayNav?: Boolean;
-}
-
-const Header: React.FC<HeaderProps> = ({ hasMobileOverlayNav = false }) => {
+const Header: React.FC<HeaderProps> = ({ hasMobileOverlayNav = false, navLinks }) => {
    return (
-      <header className={`${hasMobileOverlayNav ? "mobile-overlay" : ""}`}>
-         <div className="logo">
+      <header
+         className={clx(styles["header"], {
+            [styles["mobile-overlay"]]: hasMobileOverlayNav,
+         })}
+      >
+         <div className={styles.logo}>
             <Link to="/">rydes.</Link>
          </div>
-         <div className="nav-links">
-            <nav>
-               <NavLink to="/ride">Get a ride</NavLink>
-            </nav>
-            <nav>
-               <NavLink to="/about">Become a driver</NavLink>
-            </nav>
-            <nav>
-               <NavLink to="/about">About</NavLink>
-            </nav>
+         <div className={styles["nav-links"]}>
+            {navLinks.map(({ path, name }, index) => (
+               <nav key={index} className={styles.nav}>
+                  <NavLink to={path}>{name}</NavLink>
+               </nav>
+            ))}
          </div>
-         <div className="action-links">
+         <div className={styles["action-links"]}>
             <Link to="/signin">Sign in</Link>
             <Link to="/register">
-               <div className="get-started">Get started</div>
+               <div className={styles["get-started"]}>Get started</div>
             </Link>
          </div>
       </header>

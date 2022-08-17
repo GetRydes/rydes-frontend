@@ -43,14 +43,6 @@ const AuthLayout: React.FC<AuthLayoutProps> = ({ children, className }) => {
                            </div>
                         </div>
                      ))}
-                     {/* <div className="title qa-title with-link">
-                <div className="qa-header">
-                  <Link to="/register">Join</Link>
-                </div>
-              </div>
-              <div className="title qa-title active">
-                <div className="qa-header">Sign in</div>
-              </div> */}
                      <div className="clear"></div>
                   </div>
                   {children}
