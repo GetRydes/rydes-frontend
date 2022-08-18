@@ -1,6 +1,6 @@
-import config from "../../utils/config";
-import { PASSENGER_ACCESS_TOKEN } from "../../utils/constants";
-import TokenService from "../../utils/token";
+import config from "../../../utils/config";
+import { PASSENGER_ACCESS_TOKEN } from "../../../utils/constants";
+import TokenService from "../../../utils/token";
 import createAxiosClient from "./api";
 
 const passengerClient = createAxiosClient(config.AURORA_REST_URL);

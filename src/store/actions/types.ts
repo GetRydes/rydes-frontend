@@ -1,4 +1,3 @@
-export type ActionProps = {
-   type: "LOGIN";
-   payload: any;
-};
+import { RootActionProps } from "../reducers/root.reducer";
+
+export type ActionProps = RootActionProps;
