@@ -1,5 +1,7 @@
 import React from "react";
 import Header from "./header";
+import styles from "./default.module.scss";
+import { navLinks } from "./data";
 
 interface LayoutProps {
    children: React.ReactNode;
@@ -8,8 +10,8 @@ interface LayoutProps {
 
 const DefaultLayout: React.FC<LayoutProps> = ({ hasMobileOverlayNav = false, children }) => {
    return (
-      <div className="default-layout">
-         <Header hasMobileOverlayNav={hasMobileOverlayNav} />
+      <div className={styles["default-layout"]}>
+         <Header hasMobileOverlayNav={hasMobileOverlayNav} navLinks={navLinks} />
          {children}
       </div>
    );

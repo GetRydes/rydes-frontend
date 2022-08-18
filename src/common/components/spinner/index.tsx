@@ -1,28 +1,23 @@
 import React from "react";
+import clx from "classnames";
+import styles from "./spinner.module.scss";
 
-import "./Spinner.scss";
-
-const defaultProps = {
-   type: "default",
-   color: "#ffffff",
-   size: 15,
-} as const;
-
-interface propTypes {
+interface SpinnerProps {
    type?: "default" | "alternate";
    color?: string;
    size?: number;
 }
 
-const Spinner: React.FC<propTypes> = (props = defaultProps) => {
+const Spinner: React.FC<SpinnerProps> = ({ color = "#fff", size = 15, type = "default" }) => {
+   console.log("color ==>", color);
    return (
       <div
          style={{
-            borderRightColor: props.color,
-            width: `${props.size}px`,
-            height: `${props.size}px`,
+            borderRightColor: color,
+            width: `${size}px`,
+            height: `${size}px`,
          }}
-         className={`lds-dual-ring ${props.type}`}
+         className={clx(styles["lds-dual-ring"], styles[`${type}`])}
       />
    );
 };

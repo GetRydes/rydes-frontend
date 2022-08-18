@@ -1,1 +1,5 @@
-export type StateProps = any;
+export type StateProps = {
+   me: null | {};
+   form: { [key: string]: any };
+   loading: boolean;
+};

@@ -1,8 +1,14 @@
-import "./App.scss";
+import { ApolloProvider } from "@apollo/client";
+import { driverClient } from "./adapters/graphql/client";
 import Router from "./router";
+import "./App.scss";
 
 const App = () => {
-   return <Router />;
+   return (
+      <ApolloProvider client={driverClient}>
+         <Router />
+      </ApolloProvider>
+   );
 };
 
 export default App;
