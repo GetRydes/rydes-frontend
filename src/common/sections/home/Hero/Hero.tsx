@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { PASSENGER_ROUTE_PREFIX } from "../../../../utils/constants";
 import { Input } from "../../../elements";
 import "./Hero.scss";
 import TabHeader from "./TabHeader";
@@ -41,7 +42,7 @@ const Hero = () => {
                                           />
                                           <div className="location__fields--icons"></div>
                                        </div>
-                                       <Link to="/ride">
+                                       <Link to={`${PASSENGER_ROUTE_PREFIX}/ride`}>
                                           <div className="action__buttons">
                                              <div className="action__buttons--request">
                                                 <div>Request now</div>

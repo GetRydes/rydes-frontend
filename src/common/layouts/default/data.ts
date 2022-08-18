@@ -1,6 +1,8 @@
+import { PASSENGER_ROUTE_PREFIX } from "../../../utils/constants";
+
 export const navLinks = [
    {
-      path: "/ride",
+      path: `${PASSENGER_ROUTE_PREFIX}/ride`,
       name: "Get a ride",
    },
    {

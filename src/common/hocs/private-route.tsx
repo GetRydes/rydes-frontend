@@ -1,9 +1,7 @@
-import { useState } from "react";
 import { Navigate } from "react-router";
+import { isLoggedIn } from "../../utils/helper";
 
-const AuthProvider: React.FC<any> = ({ children }) => {
-   const [isAuthenticated] = useState(false);
-
+const PrivateRoute: React.FC = ({ children }) => {
    /**
     * This should actually be a react context api setup with a provider
     * Check if there is a token in the cookie
@@ -12,9 +10,9 @@ const AuthProvider: React.FC<any> = ({ children }) => {
     * after signin redirect the user back to the page where they originally wanted to visit
     */
 
-   if (!isAuthenticated) return <Navigate to="/signin" replace />;
+   if (!isLoggedIn()) return <Navigate to="/signin" replace />;
 
-   return children;
+   return <>{children}</>;
 };
 
-export default AuthProvider;
+export default PrivateRoute;
