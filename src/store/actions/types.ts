@@ -1,3 +1,4 @@
-import { RootActionProps } from "../reducers/root.reducer";
+import { PassengerActionProps } from "../reducers/passenger/types";
+import { RootActionProps } from "../reducers/root/types";
 
-export type ActionProps = RootActionProps;
+export type ActionProps = RootActionProps | PassengerActionProps;

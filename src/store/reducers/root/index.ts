@@ -1,4 +1,5 @@
-import { StateProps } from "../models/types";
+import { StateProps } from "../../models/types";
+import { RootActionProps } from "./types";
 
 export const rootReducer = (state: StateProps, action: RootActionProps): StateProps => {
    switch (action.type) {
@@ -10,11 +11,4 @@ export const rootReducer = (state: StateProps, action: RootActionProps): StatePr
       default:
          return state;
    }
-};
-
-export type RootActionProps = SetLoadingActionProps;
-
-export type SetLoadingActionProps = {
-   type: "SET_LOADING";
-   payload: boolean;
 };
