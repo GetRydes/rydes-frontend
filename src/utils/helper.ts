@@ -34,3 +34,7 @@ export const isLoggedIn = (type?: "PASSENGER" | "DRIVER"): boolean => {
          return !!cookie.get(PASSENGER_ACCESS_TOKEN) || !!cookie.get(DRIVER_ACCESS_TOKEN);
    }
 };
+
+export const capitalizeFirstLetter = (string: string) => {
+   return string.charAt(0).toUpperCase() + string.slice(1);
+};

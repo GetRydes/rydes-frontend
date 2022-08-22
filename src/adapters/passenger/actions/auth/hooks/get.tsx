@@ -5,14 +5,29 @@ import { actionSetCurrentPassenger } from "../../../../../store/actions/passenge
 import { actionSetLoading } from "../../../../../store/actions/root.action";
 import { ActionProps } from "../../../../../store/actions/types";
 import { StateProps } from "../../../../../store/models/types";
-import { PASSENGER_ACCESS_TOKEN } from "../../../../../utils/constants";
+import { PASSENGER_ACCESS_TOKEN, PASSENGER_REFRESH_TOKEN } from "../../../../../utils/constants";
 import TokenService from "../../../../../utils/token";
 
 export const useStateInitializer = () => {
+   const navigate = useNavigate();
    const [, dispatch] = useContext<[StateProps, Dispatch<ActionProps>]>(AppStateContext);
 
    return (props: { type: string; data: any }) => {
       switch (props.type) {
+         case "login":
+            // dispatch({ type: "SET_TOKENS", payload: props.data.login });
+            const expiry_date = new Date();
+            expiry_date.setSeconds(expiry_date.getSeconds() + 300);
+            TokenService.updateLocalToken(PASSENGER_ACCESS_TOKEN, props.data.data.accessToken, {
+               expires: expiry_date,
+               path: "/",
+            });
+            TokenService.updateLocalToken(PASSENGER_REFRESH_TOKEN, props.data.data.refreshToken, {
+               expires: expiry_date,
+               path: "/",
+            });
+            navigate("/passenger/ride");
+            break;
          case "logout":
             dispatch(actionSetCurrentPassenger(null));
             TokenService.removeLocalToken(PASSENGER_ACCESS_TOKEN, { path: "/" });
