@@ -5,10 +5,10 @@ export const registerFormControls = (
    onBlur: React.FocusEventHandler<HTMLInputElement>,
 ) => [
    {
-      name: "email",
       label: "Email Address",
       properties: {
          type: "email",
+         name: "email",
          placeholder: "jack.robinson@bankr.com",
          required: true,
          className: errors.email ? "invalid" : "",

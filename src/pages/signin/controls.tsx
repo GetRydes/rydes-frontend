@@ -5,10 +5,10 @@ export const loginFormControls = (
    onBlur: React.FocusEventHandler<HTMLInputElement>,
 ) => [
    {
-      name: "email",
       label: "Email Address",
       properties: {
          type: "email",
+         name: "email",
          placeholder: "jack.robinson@bankr.com",
          required: true,
          className: errors.email ? "invalid" : "",
@@ -19,10 +19,10 @@ export const loginFormControls = (
       },
    },
    {
-      name: "password",
       label: "Password",
       properties: {
          type: "password",
+         name: "password",
          placeholder: "********",
          required: true,
          className: errors.password ? "invalid" : "",

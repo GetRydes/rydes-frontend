@@ -36,18 +36,12 @@ const Register = () => {
             <h2 className={clx(styles["qa-use-email"], styles["last-child"])}>
                Or sign up with email
             </h2>
-            <form onSubmit={onFormSubmit}>
-               <FormBuilder
-                  controls={registerFormControls(errors, onInputBlur)}
-                  form={form}
-                  setForm={setForm}
-               />
-               <div>
-                  <Button type="submit" disabled={loading} loading={loading}>
-                     Join Rydes
-                  </Button>
-               </div>
-            </form>
+            <FormBuilder
+               controls={registerFormControls(errors, onInputBlur)}
+               classNames={{}}
+               onSubmit={() => {}}
+               submitButtonLabel="Join Rydes"
+            />
          </div>
       </AuthLayout>
    );

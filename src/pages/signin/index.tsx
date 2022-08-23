@@ -11,33 +11,21 @@ import SocialAuth from "../../common/layouts/auth/components/social-auth/social-
 
 const Login = () => {
    const [errors, setErrors] = useState<any>({});
-   const [loading, setLoading] = useState(false);
-   const [form, setForm] = useState<{ [key: string]: any }>({});
    const loginPassenger = useLogin();
-
-   const onFormSubmit: React.FormEventHandler<HTMLFormElement> = async (e) => {
-      e.preventDefault();
-      setErrors({});
-      setLoading(true);
-      const response = await loginPassenger();
-      setLoading(false);
-   };
 
    const onInputBlur = (e: any) => {};
 
    return (
       <AuthLayout className={styles["signin"]}>
          <div className={clx(styles["form"], styles["form--login"])}>
-            <form onSubmit={onFormSubmit} className={styles["form--login__container"]}>
-               <FormBuilder
-                  controls={loginFormControls(errors, onInputBlur)}
-                  form={form}
-                  setForm={setForm}
-               />
-               <Button type="submit" disabled={loading} loading={loading}>
-                  Sign in
-               </Button>
-            </form>
+            <FormBuilder
+               controls={loginFormControls(errors, onInputBlur)}
+               classNames={{
+                  form: styles["form--login__container"],
+               }}
+               onSubmit={loginPassenger}
+               submitButtonLabel="Sign in"
+            />
             <div className={styles["forgot-password"]}>
                <Link to="/forgot-password">Forgot password?</Link>
             </div>
