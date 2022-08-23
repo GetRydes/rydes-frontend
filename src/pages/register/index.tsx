@@ -1,22 +1,11 @@
-import { useState } from "react";
 import clx from "classnames";
 import FormBuilder from "../../common/components/form-builder";
-import { Button } from "../../common/elements";
 import AuthLayout from "../../common/layouts/auth";
 import { registerFormControls } from "./controls";
 import styles from "./register.module.scss";
 import SocialAuth from "../../common/layouts/auth/components/social-auth/social-auth";
 
 const Register = () => {
-   const [errors, setErrors] = useState<any>({});
-   const [loading, setLoading] = useState(false);
-   const [form, setForm] = useState<{ [key: string]: any }>({});
-
-   const onFormSubmit = () => {
-      setErrors({});
-      setLoading(false);
-   };
-
    const onInputBlur = (e: any) => {};
 
    return (
@@ -37,7 +26,7 @@ const Register = () => {
                Or sign up with email
             </h2>
             <FormBuilder
-               controls={registerFormControls(errors, onInputBlur)}
+               controls={registerFormControls({}, onInputBlur)}
                classNames={{}}
                onSubmit={() => {}}
                submitButtonLabel="Join Rydes"

@@ -41,7 +41,7 @@ const FormBuilder: React.FC<FormBuilderProps> = ({
 
    const handleSubmission: React.FormEventHandler<HTMLFormElement> = (e) => {
       e.preventDefault();
-      onSubmit?.();
+      onSubmit?.(form);
    };
 
    return (

@@ -29,7 +29,8 @@ passengerClient.interceptors.response.use(
    },
    async (err) => {
       const originalConfig = err.config;
-      if (originalConfig.url !== "/api/v1/auth/login" && err.response) {
+      if (originalConfig.url !== "/auth/login/password" && err.response) {
+         console.log("url", originalConfig.url);
          // Access Token was expired
          if (err.response.status === 401 && !originalConfig._retry) {
             originalConfig._retry = true;
