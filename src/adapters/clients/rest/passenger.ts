@@ -1,6 +1,6 @@
-import config from "../../utils/config";
-import { PASSENGER_ACCESS_TOKEN } from "../../utils/constants";
-import TokenService from "../../utils/token";
+import config from "../../../utils/config";
+import { PASSENGER_ACCESS_TOKEN } from "../../../utils/constants";
+import TokenService from "../../../utils/token";
 import createAxiosClient from "./api";
 
 const passengerClient = createAxiosClient(config.AURORA_REST_URL);
@@ -29,7 +29,8 @@ passengerClient.interceptors.response.use(
    },
    async (err) => {
       const originalConfig = err.config;
-      if (originalConfig.url !== "/api/v1/auth/login" && err.response) {
+      if (originalConfig.url !== "/auth/login/password" && err.response) {
+         console.log("url", originalConfig.url);
          // Access Token was expired
          if (err.response.status === 401 && !originalConfig._retry) {
             originalConfig._retry = true;

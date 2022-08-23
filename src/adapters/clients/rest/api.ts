@@ -1,6 +1,6 @@
 import axios from "axios";
-import config from "../../utils/config";
-import TokenService from "../../utils/token";
+import config from "../../../utils/config";
+import TokenService from "../../../utils/token";
 import { CreateApolloClient } from "./types";
 
 const createAxiosClient: CreateApolloClient = (url, options) => {

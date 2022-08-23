@@ -1,19 +1,27 @@
+import styles from "./register.module.scss";
+
 export const registerFormControls = (
    errors: { [key: string]: any },
    onBlur: React.FocusEventHandler<HTMLInputElement>,
 ) => [
    {
-      name: "email",
       label: "Email Address",
       properties: {
          type: "email",
+         name: "email",
          placeholder: "jack.robinson@bankr.com",
          required: true,
          className: errors.email ? "invalid" : "",
          onBlur,
+         classNames: {
+            container: styles["form-content"],
+         },
       },
    },
-   {
+];
+
+/**
+ * {
       name: "firstName",
       label: "First Name",
       properties: {
@@ -22,6 +30,9 @@ export const registerFormControls = (
          required: true,
          className: errors.firstName ? "invalid" : "",
          onBlur,
+         classNames: {
+            container: styles["form-content"],
+         },
       },
    },
    {
@@ -33,6 +44,9 @@ export const registerFormControls = (
          required: true,
          className: errors.lastName ? "invalid" : "",
          onBlur,
+         classNames: {
+            container: styles["form-content"],
+         },
       },
    },
    {
@@ -44,6 +58,9 @@ export const registerFormControls = (
          required: true,
          className: errors.lastName ? "invalid" : "",
          onBlur,
+         classNames: {
+            container: styles["form-content"],
+         },
       },
    },
    {
@@ -55,6 +72,9 @@ export const registerFormControls = (
          required: true,
          className: errors.lastName ? "invalid" : "",
          onBlur,
+         classNames: {
+            container: styles["form-content"],
+         },
       },
    },
-];
+ */
