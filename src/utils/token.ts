@@ -25,8 +25,8 @@ const updateLocalToken = (key: string, value: string, options?: CookieSetOptions
    cookies.set(key, value, options);
 };
 
-const removeLocalToken = (key: string) => {
-   new Cookies().remove(key);
+const removeLocalToken = (key: string, options?: CookieSetOptions) => {
+   new Cookies().remove(key, options);
 };
 
 const TokenService = Object.freeze({

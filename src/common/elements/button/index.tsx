@@ -1,7 +1,8 @@
+import clx from "classnames";
 import Spinner from "../../components/spinner";
-import "./Button.scss";
+import styles from "./button.module.scss";
 
-const Button = (props: any) => {
+const Button = ({ variant = "primary", ...props }: any) => {
    return (
       <button
          style={props.style}
@@ -11,21 +12,36 @@ const Button = (props: any) => {
             return props.onClick ? props.onClick(e) : null;
          }}
          onSubmit={props.onSubmit}
-         className={`btn ${props.color} ${props.loading && "loading"} ${props.block && "block"} ${
-            props.className
-         }`}
+         className={clx(
+            styles.btn,
+            {
+               [styles[`${props.color}`]]: props.color,
+               [styles.loading]: props.loading,
+               [styles.block]: props.block,
+               [styles[`${variant}`]]: variant,
+            },
+            props.className,
+         )}
          disabled={props.disabled}
          type={props.type}
          value={props.value}
          title={props.title}
       >
-         <span className={"content"}>
-            {props.icon && <span className={"icon-left"}>{props.icon}</span>}
+         <span
+            className={clx(styles.content, {
+               [styles.loading]: props.loading,
+            })}
+         >
+            {props.icon && <span className={styles["icon-left"]}>{props.icon}</span>}
             {props.children}
          </span>
          {props.loading ? (
-            <span className={`spinner ${props.color}`}>
-               <Spinner />
+            <span
+               className={clx(styles.spinner, {
+                  [styles[`${props.color}`]]: props.color,
+               })}
+            >
+               <Spinner size={18} />
             </span>
          ) : null}
       </button>

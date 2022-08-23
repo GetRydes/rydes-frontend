@@ -2,7 +2,7 @@ import Cookies from "universal-cookie";
 import { ApolloClient, from, InMemoryCache, NormalizedCacheObject } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import { createUploadLink } from "apollo-upload-client";
-import config from "../../utils/config";
+import config from "../../../utils/config";
 
 export const createApolloClient = (url?: string): ApolloClient<NormalizedCacheObject> => {
    const httpLink = createUploadLink({

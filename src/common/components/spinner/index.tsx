@@ -9,7 +9,6 @@ interface SpinnerProps {
 }
 
 const Spinner: React.FC<SpinnerProps> = ({ color = "#fff", size = 15, type = "default" }) => {
-   console.log("color ==>", color);
    return (
       <div
          style={{

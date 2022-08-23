@@ -1,5 +1,6 @@
 import { Dispatch, useContext, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
+import { useSetCurrentUser } from "../../adapters/passenger/actions";
 import { Spinner } from "../../common/components";
 import DefaultLayout from "../../common/layouts/default";
 import { AppStateContext } from "../../store";
@@ -9,10 +10,10 @@ import { passengerRoutes } from "./routes";
 
 const PassengerPages = () => {
    const [{ me, loading }] = useContext<[StateProps, Dispatch<ActionProps>]>(AppStateContext);
-   const setCurrentUser = () => {};
+   const setCurrentUser = useSetCurrentUser();
 
    useEffect(() => {
-      if (me == null) setCurrentUser();
+      if (!me) setCurrentUser();
       // eslint-disable-next-line
    }, []);
 
