@@ -1,9 +1,9 @@
 import clx from "classnames";
-import FormBuilder from "../../common/components/form-builder";
-import AuthLayout from "../../common/layouts/auth";
+import FormBuilder from "../../../common/components/form-builder";
+import AuthLayout from "../../../common/layouts/auth";
 import { registerFormControls } from "./controls";
 import styles from "./register.module.scss";
-import SocialAuth from "../../common/layouts/auth/components/social-auth/social-auth";
+import SocialAuth from "../../../common/layouts/auth/components/social-auth/social-auth";
 
 const Register = () => {
    const onInputBlur = (e: any) => {};

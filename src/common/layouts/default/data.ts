@@ -1,4 +1,4 @@
-import { PASSENGER_ROUTE_PREFIX } from "../../../utils/constants";
+import { DRIVER_ROUTE_PREFIX, PASSENGER_ROUTE_PREFIX } from "../../../utils/constants";
 
 export const navLinks = [
    {
@@ -6,7 +6,7 @@ export const navLinks = [
       name: "Get a ride",
    },
    {
-      path: "/drive",
+      path: `${DRIVER_ROUTE_PREFIX}/drive`,
       name: "Become a driver",
    },
    {

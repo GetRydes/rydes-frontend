@@ -1,29 +1,24 @@
-import { Home, Passenger, Register, Signin } from "../pages";
-import { PASSENGER_ROUTE_PREFIX } from "../utils/constants";
+import { Driver, Home, Passenger } from "../pages";
+import { DRIVER_ROUTE_PREFIX, PASSENGER_ROUTE_PREFIX } from "../utils/constants";
 
 const Routes = [
    {
       name: "passenger",
       path: `${PASSENGER_ROUTE_PREFIX}/*`,
       Component: Passenger,
-      isProtected: true,
+      isAuthRoute: false,
    },
    {
-      name: "register",
-      path: "/register",
-      Component: Register,
-      isAuthRoute: true,
-   },
-   {
-      name: "signin",
-      path: "/signin",
-      Component: Signin,
-      isAuthRoute: true,
+      name: "driver",
+      path: `${DRIVER_ROUTE_PREFIX}/*`,
+      Component: Driver,
    },
    {
       name: "home",
       path: "/",
       Component: Home,
+      isProtected: false,
+      isAuthRoute: false,
    },
 ];
 

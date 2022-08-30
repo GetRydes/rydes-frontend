@@ -1,18 +1,17 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router";
 import AuthenticationRoute from "../../common/hocs/auth-route";
-import PassengerProtectedRoute from "../../common/hocs/passenger-private-route";
 import PrivateRoute from "../../common/hocs/private-route";
-import { passengerRoutes } from "./routes";
+import { driverRoutes } from "./routes";
 
-const PassengerPages = () => {
+const DriverPages = () => {
    return (
       <Routes>
-         {passengerRoutes.map(({ Component, path, isAuthRoute, isProtected }, key) => {
+         {driverRoutes.map(({ Component, path, isAuthRoute, isProtected }, key) => {
             return isProtected ? (
                <Route
                   path={path}
                   element={
-                     <PrivateRoute ProtectionComponent={PassengerProtectedRoute}>
+                     <PrivateRoute userType="DRIVER">
                         <Component />
                      </PrivateRoute>
                   }
@@ -22,7 +21,7 @@ const PassengerPages = () => {
                <Route
                   path={path}
                   element={
-                     <AuthenticationRoute>
+                     <AuthenticationRoute userType="DRIVER">
                         <Component />
                      </AuthenticationRoute>
                   }
@@ -36,4 +35,4 @@ const PassengerPages = () => {
    );
 };
 
-export default PassengerPages;
+export default DriverPages;

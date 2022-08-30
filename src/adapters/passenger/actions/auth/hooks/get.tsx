@@ -44,7 +44,7 @@ export const useLogout = () => {
    return async () => {
       // you want to invalidate the token, by hitting the logout route on the backend
       stateInitializer({ type: "logout", data: null });
-      navigate("/signin");
+      navigate("/passenger/signin");
    };
 };
 

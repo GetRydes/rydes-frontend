@@ -1,10 +1,10 @@
 export const routes = [
    {
-      path: "/register",
+      path: "/passenger/register",
       name: "Join",
    },
    {
-      path: "/signin",
+      path: "/passenger/signin",
       name: "Sign in",
    },
 ];

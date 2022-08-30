@@ -1,7 +1,17 @@
+import { Fragment } from "react";
 import { Navigate } from "react-router";
 import { isLoggedIn } from "../../utils/helper";
 
-const PrivateRoute: React.FC = ({ children }) => {
+export interface PrivateRouteProps {
+   ProtectionComponent?: React.FC;
+   userType?: "PASSENGER" | "DRIVER";
+}
+
+const PrivateRoute: React.FC<PrivateRouteProps> = ({
+   children,
+   ProtectionComponent = Fragment,
+   userType = "PASSENGER",
+}) => {
    /**
     * This should actually be a react context api setup with a provider
     * Check if there is a token in the cookie
@@ -10,9 +20,9 @@ const PrivateRoute: React.FC = ({ children }) => {
     * after signin redirect the user back to the page where they originally wanted to visit
     */
 
-   if (!isLoggedIn()) return <Navigate to="/signin" replace />;
+   if (!isLoggedIn(userType)) return <Navigate to={`/${userType.toLowerCase()}/signin`} replace />;
 
-   return <>{children}</>;
+   return <ProtectionComponent>{children}</ProtectionComponent>;
 };
 
 export default PrivateRoute;
