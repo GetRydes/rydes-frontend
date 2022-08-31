@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import AuthenticationRoute from "../../common/hocs/auth-route";
 import PassengerProtectedRoute from "../../common/hocs/passenger-private-route";
 import PrivateRoute from "../../common/hocs/private-route";
+import PageNotFound from "../404/404";
 import { passengerRoutes } from "./routes";
 
 const PassengerPages = () => {
@@ -32,6 +33,7 @@ const PassengerPages = () => {
                <Route path={path} element={<Component />} key={key} />
             );
          })}
+         <Route path="*" element={<PageNotFound />} />
       </Routes>
    );
 };

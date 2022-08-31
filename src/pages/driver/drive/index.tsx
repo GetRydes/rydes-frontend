@@ -1,4 +1,4 @@
-import DefaultLayout from "../../../common/layouts/default";
+import { DefaultLayout } from "../../../common/layouts";
 
 const Drive = () => {
    return (

@@ -1,4 +1,4 @@
 export interface FormElementProps {
-   label: string;
+   label?: string;
    properties: { [key: string]: any; name: string };
 }

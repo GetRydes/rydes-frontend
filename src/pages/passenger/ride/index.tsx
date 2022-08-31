@@ -1,6 +1,6 @@
-import DefaultLayout from "../../../common/layouts/default";
-import Maps from "../../../common/sections/ride/map/Map";
-import RideDetails from "../../../common/sections/ride/ride-details/ride-details";
+import { DefaultLayout } from "../../../common/layouts";
+import { Maps } from "../../../common/sections";
+import { RideDetails } from "../../../common/sections";
 import styles from "./ride.module.scss";
 
 const Ride = () => {

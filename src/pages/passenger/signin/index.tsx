@@ -2,10 +2,9 @@ import { Link } from "react-router-dom";
 import clx from "classnames";
 import { useLogin } from "../../../adapters/passenger/actions/auth";
 import FormBuilder from "../../../common/components/form-builder";
-import AuthLayout from "../../../common/layouts/auth";
+import { AuthLayout, SocialAuth } from "../../../common/layouts";
 import { loginFormControls } from "./controls";
 import styles from "./signin.module.scss";
-import SocialAuth from "../../../common/layouts/auth/components/social-auth/social-auth";
 
 const Login = () => {
    const loginPassenger = useLogin();

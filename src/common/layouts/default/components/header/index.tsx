@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import clx from "classnames";
 import styles from "./header.module.scss";
 import { HeaderProps } from "./types";
-import { Button } from "../../../elements";
+import { Button } from "../../../../elements";
 
 const Header: React.FC<HeaderProps> = ({
    hasMobileOverlayNav = false,

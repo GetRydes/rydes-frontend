@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import clx from "classnames";
-import Header from "./header";
+import Header from "./components/header";
 import styles from "./default.module.scss";
 import { navLinks } from "./data";
-import ProfileSelector from "./profile-selector";
+import ProfileSelector from "./components/profile-selector";
 
-interface LayoutProps {
+export interface LayoutProps {
    children: React.ReactNode;
    hasMobileOverlayNav?: Boolean;
    classNames?: { [key: string]: string };
 }
 
-const DefaultLayout: React.FC<LayoutProps> = ({
+export const DefaultLayout: React.FC<LayoutProps> = ({
    hasMobileOverlayNav = false,
    classNames = {},
    children,
@@ -64,4 +64,4 @@ const DefaultLayout: React.FC<LayoutProps> = ({
    );
 };
 
-export default DefaultLayout;
+export * from "./components";

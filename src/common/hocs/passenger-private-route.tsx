@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useSetCurrentUser } from "../../adapters/passenger/actions";
 import { useAppContext } from "../../store";
 import { Spinner } from "../components";
-import DefaultLayout from "../layouts/default";
+import { DefaultLayout } from "../layouts";
 
 const PassengerProtectedRoute: React.FC = ({ children }) => {
    const [{ me, loading }] = useAppContext();

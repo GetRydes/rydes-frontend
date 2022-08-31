@@ -1,5 +1,5 @@
-import DefaultLayout from "../../common/layouts/default";
-import Hero from "../../common/sections/home/Hero/Hero";
+import { DefaultLayout } from "../../common/layouts";
+import { Hero } from "../../common/sections";
 import styles from "./home.module.scss";
 
 const Home = () => {
