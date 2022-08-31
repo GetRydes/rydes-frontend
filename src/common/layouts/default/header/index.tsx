@@ -27,10 +27,26 @@ const Header: React.FC<HeaderProps> = ({
                ))}
             </div>
             <div className={styles["action-links"]}>
-               <Link to="/signin">Sign in</Link>
+               <Button
+                  variant="outlined"
+                  className={styles["sign-in"]}
+                  onClick={() =>
+                     setShowProfileSelector((state) => ({
+                        name: "signin",
+                        visible: state.name === "signin" ? !state.visible : true,
+                     }))
+                  }
+               >
+                  Sign in
+               </Button>
                <Button
                   className={styles["get-started"]}
-                  onClick={() => setShowProfileSelector((state) => !state)}
+                  onClick={() =>
+                     setShowProfileSelector((state) => ({
+                        name: "get-started",
+                        visible: state.name === "get-started" ? !state.visible : true,
+                     }))
+                  }
                >
                   Get started
                </Button>

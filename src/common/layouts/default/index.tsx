@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import clx from "classnames";
 import Header from "./header";
 import styles from "./default.module.scss";
 import { navLinks } from "./data";
@@ -7,16 +8,51 @@ import ProfileSelector from "./profile-selector";
 interface LayoutProps {
    children: React.ReactNode;
    hasMobileOverlayNav?: Boolean;
+   classNames?: { [key: string]: string };
 }
 
-const DefaultLayout: React.FC<LayoutProps> = ({ hasMobileOverlayNav = false, children }) => {
-   const [showProfileSelector, setShowProfileSelector] = useState(false);
+const DefaultLayout: React.FC<LayoutProps> = ({
+   hasMobileOverlayNav = false,
+   classNames = {},
+   children,
+}) => {
+   const [showProfileSelector, setShowProfileSelector] = useState({
+      name: "signin",
+      visible: false,
+   });
 
    return (
-      <div className={styles["default-layout"]}>
+      <div
+         className={clx(styles["default-layout"], {
+            [classNames?.container]: classNames?.container,
+         })}
+      >
          <ProfileSelector
-            showProfileSelector={showProfileSelector}
+            showProfileSelector={showProfileSelector.visible}
             setShowProfileSelector={setShowProfileSelector}
+            options={
+               showProfileSelector.name === "signin"
+                  ? [
+                       {
+                          text: "Sign in to drive",
+                          route: "/driver/signin",
+                       },
+                       {
+                          text: "Sign in to ride",
+                          route: "/passenger/signin",
+                       },
+                    ]
+                  : [
+                       {
+                          text: "Sign up to drive",
+                          route: "/driver/register",
+                       },
+                       {
+                          text: "Sign up to ride",
+                          route: "/passenger/register",
+                       },
+                    ]
+            }
          />
          <Header
             hasMobileOverlayNav={hasMobileOverlayNav}

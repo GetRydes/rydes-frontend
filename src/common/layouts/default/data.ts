@@ -6,7 +6,7 @@ export const navLinks = [
       name: "Get a ride",
    },
    {
-      path: `${DRIVER_ROUTE_PREFIX}/drive`,
+      path: `${DRIVER_ROUTE_PREFIX}/register`,
       name: "Become a driver",
    },
    {

@@ -56,6 +56,8 @@
    display: flex;
    color: white;
    align-items: center;
+   flex: 0.23;
+   gap: 1rem;
 
    & > a:first-child {
       margin-right: 30px;
@@ -65,5 +67,10 @@
 .get-started {
    padding: 15px 17px !important;
    background: #0d9648 !important;
+   font-weight: 600 !important;
+}
+
+.sign-in {
+   padding: 15px 17px !important;
    font-weight: 600 !important;
 }
