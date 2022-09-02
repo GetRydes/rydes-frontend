@@ -3,11 +3,11 @@ import { AuthLayout } from "../../../common/layouts";
 import {
    Complete,
    EmailCode,
+   EnterNames,
    EnterPassword,
    RegisterForm,
    SocialOrEmail,
 } from "../../../common/sections";
-import { EnterNames } from "../../../common/sections/passenger/register/enter-names";
 import styles from "./register.module.scss";
 
 const Register = () => {

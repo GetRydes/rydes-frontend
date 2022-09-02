@@ -2,7 +2,7 @@ import clx from "classnames";
 import { useSearchParams } from "react-router-dom";
 import FormBuilder from "../../../../components/form-builder";
 import { SocialAuth } from "../../../../layouts";
-import { registerFormControls } from "../controls";
+import { registerFormControls } from "../register.controls";
 import { SocialOrEmailProps } from "./types";
 import styles from "./social-or-email.module.scss";
 import formStyles from "../form.module.scss";

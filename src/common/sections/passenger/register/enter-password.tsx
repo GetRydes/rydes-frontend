@@ -1,7 +1,7 @@
-import { EnterPasswordProps } from "./types";
-import { FormBuilder } from "../../../../components";
-import { passwordControls } from "../controls";
-import { RegisterForm } from "../form-container";
+import { EnterPasswordProps } from "./register.types";
+import { FormBuilder } from "../../../components";
+import { passwordControls } from "./register.controls";
+import { RegisterForm } from "./form-container";
 import { useSearchParams } from "react-router-dom";
 
 export const EnterPassword: React.FC<EnterPasswordProps> = () => {

@@ -1,9 +1,9 @@
 import { useSearchParams } from "react-router-dom";
-import { useAppContext } from "../../../../../store";
-import { FormBuilder } from "../../../../components";
-import { emailCodeFormControls } from "../controls";
-import { RegisterForm } from "../form-container";
-import { EmailCodeProps } from "./types";
+import { useAppContext } from "../../../../store";
+import { FormBuilder } from "../../../components";
+import { emailCodeFormControls } from "./register.controls";
+import { RegisterForm } from "./form-container";
+import { EmailCodeProps } from "./register.types";
 
 export const EmailCode: React.FC<EmailCodeProps> = () => {
    const [{ form }] = useAppContext();

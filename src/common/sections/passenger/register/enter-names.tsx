@@ -1,8 +1,8 @@
 import { useSearchParams } from "react-router-dom";
-import { FormBuilder } from "../../../../components";
-import { nameControls } from "../controls";
-import { RegisterForm } from "../form-container";
-import { EnterNamesProps } from "./types";
+import { FormBuilder } from "../../../components";
+import { nameControls } from "./register.controls";
+import { RegisterForm } from "./form-container";
+import { EnterNamesProps } from "./register.types";
 
 export const EnterNames: React.FC<EnterNamesProps> = () => {
    const [, setSearchParams] = useSearchParams();
