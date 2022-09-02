@@ -1,4 +1,5 @@
 import clx from "classnames";
+import { useSearchParams } from "react-router-dom";
 import FormBuilder from "../../../../components/form-builder";
 import { SocialAuth } from "../../../../layouts";
 import { registerFormControls } from "../controls";
@@ -6,7 +7,8 @@ import { SocialOrEmailProps } from "./types";
 import styles from "./social-or-email.module.scss";
 import formStyles from "../form.module.scss";
 
-export const SocialOrEmail: React.FC<SocialOrEmailProps> = ({ onAction }) => {
+export const SocialOrEmail: React.FC<SocialOrEmailProps> = () => {
+   const [, setSearchParams] = useSearchParams();
    return (
       <>
          <div className={clx(styles.info, styles["info-centre"])}>
@@ -25,7 +27,12 @@ export const SocialOrEmail: React.FC<SocialOrEmailProps> = ({ onAction }) => {
             <FormBuilder
                controls={registerFormControls}
                classNames={{ form: formStyles["form--container"] }}
-               onSubmit={onAction}
+               onSubmit={() => {
+                  setSearchParams({
+                     step: "2",
+                     state: "email-code",
+                  });
+               }}
                submitButtonLabel="Join Rydes"
             />
          </div>

@@ -1,3 +1,1 @@
-export interface SocialOrEmailProps {
-   onAction: () => void;
-}
+export interface SocialOrEmailProps {}

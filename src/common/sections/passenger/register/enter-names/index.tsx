@@ -1,21 +1,27 @@
-import clx from "classnames";
-import formStyles from "../form.module.scss";
-import registerStyles from "../register.module.scss";
+import { useSearchParams } from "react-router-dom";
 import { FormBuilder } from "../../../../components";
 import { nameControls } from "../controls";
+import { RegisterForm } from "../form-container";
 import { EnterNamesProps } from "./types";
 
-export const EnterNames: React.FC<EnterNamesProps> = ({ onAction }) => {
+export const EnterNames: React.FC<EnterNamesProps> = () => {
+   const [, setSearchParams] = useSearchParams();
+
    return (
-      <div className={clx(formStyles.form, formStyles["full-width"])}>
-         <h2 className={clx(registerStyles.heading)}>What's your name?</h2>
-         <p className={clx(registerStyles.text)}>Let us know how to properly address you</p>
+      <RegisterForm.ItemContainer
+         heading="What's your name?"
+         text="Let us know how to properly address you"
+      >
          <FormBuilder
             controls={nameControls}
-            classNames={{}}
-            onSubmit={onAction}
+            onSubmit={() => {
+               setSearchParams({
+                  step: "6",
+                  state: "enter-names",
+               });
+            }}
             submitButtonLabel="Join Rydes"
          />
-      </div>
+      </RegisterForm.ItemContainer>
    );
 };

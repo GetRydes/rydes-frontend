@@ -1,3 +1,1 @@
-export interface EmailCodeProps {
-   onAction: () => void;
-}
+export interface EmailCodeProps {}

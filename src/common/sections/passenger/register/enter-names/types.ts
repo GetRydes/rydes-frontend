@@ -1,3 +1,1 @@
-export interface EnterNamesProps {
-   onAction: () => void;
-}
+export interface EnterNamesProps {}

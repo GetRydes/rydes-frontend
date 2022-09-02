@@ -1,3 +1,1 @@
-export interface EnterPasswordProps {
-   onAction: () => void;
-}
+export interface EnterPasswordProps {}
