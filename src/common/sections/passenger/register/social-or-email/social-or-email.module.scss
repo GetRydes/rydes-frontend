@@ -1,55 +1,13 @@
-.form {
-   margin: 0 auto;
-   padding: 0 6% 30px 6%;
-   width: 88%;
-   border: none;
-
-   .qa-use-email {
-      margin: 40px 0 40px 0;
-      font-style: normal;
-      font-weight: 700;
-      font-size: 18px;
-      line-height: 1.2;
-      // letter-spacing: 2.5px;
-      text-transform: uppercase;
-      text-align: center;
-      letter-spacing: 2.3px;
-   }
-
-   form {
-      padding: 0 12.5%;
-   }
-
-   .form-content {
-      &:not(:last-child) {
-         margin-bottom: 19px;
-      }
-
-      label {
-         display: block;
-         font-style: normal;
-         font-weight: 700;
-         text-transform: uppercase;
-         margin: 0 3% 11px 0;
-         min-width: 20%;
-         font-size: 14px;
-         color: #767676;
-         letter-spacing: 2px;
-         line-height: 1.7;
-      }
-
-      input {
-         padding: 12px 10px;
-         font-size: 14px;
-         width: 100%;
-         border: 1px solid #767676;
-
-         &:focus,
-         &:focus-within {
-            outline: none;
-         }
-      }
-   }
+.heading {
+   margin: 40px 0 40px 0;
+   font-style: normal;
+   font-weight: 700;
+   font-size: 18px;
+   line-height: 1.2;
+   // letter-spacing: 2.5px;
+   text-transform: uppercase;
+   text-align: center;
+   letter-spacing: 2.3px;
 }
 
 .info {

@@ -1,9 +1,10 @@
 import clx from "classnames";
 import FormBuilder from "../../../../components/form-builder";
 import { SocialAuth } from "../../../../layouts";
-import { registerFormControls } from "./controls";
+import { registerFormControls } from "../controls";
 import { SocialOrEmailProps } from "./types";
 import styles from "./social-or-email.module.scss";
+import formStyles from "../form.module.scss";
 
 export const SocialOrEmail: React.FC<SocialOrEmailProps> = ({ onAction }) => {
    return (
@@ -19,13 +20,11 @@ export const SocialOrEmail: React.FC<SocialOrEmailProps> = ({ onAction }) => {
                </p>
             </div>
          </div>
-         <div className={clx(styles.form, styles["form--register"])}>
-            <h2 className={clx(styles["qa-use-email"], styles["last-child"])}>
-               Or sign up with email
-            </h2>
+         <div className={clx(formStyles.form)}>
+            <h2 className={clx(styles.heading, styles["last-child"])}>Or sign up with email</h2>
             <FormBuilder
                controls={registerFormControls}
-               classNames={{}}
+               classNames={{ form: formStyles["form--container"] }}
                onSubmit={onAction}
                submitButtonLabel="Join Rydes"
             />

@@ -1,6 +1,7 @@
 import { useSearchParams } from "react-router-dom";
 import { AuthLayout } from "../../../common/layouts";
-import { EmailCode, RegisterForm, SocialOrEmail } from "../../../common/sections";
+import { EmailCode, EnterPassword, RegisterForm, SocialOrEmail } from "../../../common/sections";
+import { EnterNames } from "../../../common/sections/passenger/register/enter-names";
 import styles from "./register.module.scss";
 
 const Register = () => {
@@ -35,8 +36,15 @@ const Register = () => {
          case "3":
             return (
                <RegisterForm.ItemContainer>
-                  {/* phone number code */}
-                  <div>step 3</div>
+                  {/* phone number */}
+                  <EnterPassword
+                     onAction={() => {
+                        setSearchParams({
+                           step: "4",
+                           state: "password",
+                        });
+                     }}
+                  />
                </RegisterForm.ItemContainer>
             );
          case "4":
@@ -44,14 +52,28 @@ const Register = () => {
                <RegisterForm.ItemContainer>
                   {/* enter and confirm password */}
                   {/* specify password rules */}
-                  <div>step 4</div>
+                  <EnterPassword
+                     onAction={() => {
+                        setSearchParams({
+                           step: "5",
+                           state: "enter-names",
+                        });
+                     }}
+                  />
                </RegisterForm.ItemContainer>
             );
          case "5":
             return (
                <RegisterForm.ItemContainer>
                   {/* enter first name and last name */}
-                  <div>step 5</div>
+                  <EnterNames
+                     onAction={() => {
+                        setSearchParams({
+                           step: "6",
+                           state: "enter-names",
+                        });
+                     }}
+                  />
                </RegisterForm.ItemContainer>
             );
          case "6":
