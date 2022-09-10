@@ -37,7 +37,7 @@ const Hero = () => {
                                        <div className="location__fields">
                                           <Input placeholder="Enter pickup location" />
                                           <Input
-                                             classname="destination"
+                                             className="destination"
                                              placeholder="Enter destination"
                                           />
                                           <div className="location__fields--icons"></div>

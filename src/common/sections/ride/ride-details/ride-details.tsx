@@ -16,7 +16,7 @@ const RideDetails = () => {
             <div className="input-fields">
                <Input onFocus={() => setFormState(0)} placeholder="Enter pickup location" />
                <Input
-                  classname="destination"
+                  className="destination"
                   onFocus={() => setFormState(1)}
                   placeholder="Enter destination"
                />

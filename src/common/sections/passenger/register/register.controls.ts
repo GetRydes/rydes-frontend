@@ -32,7 +32,7 @@ export const passwordControls = [
 export const emailCodeFormControls = [
    {
       properties: {
-         type: "number",
+         type: "code",
          name: "emailCode",
          placeholder: "1234",
          required: true,

@@ -1,24 +1,34 @@
 import React from "react";
-import "./input.scss";
+import clx from "classnames";
+import styles from "./input.module.scss";
+import { InputProps } from "./types";
 
-const defaultProps = {
-   classname: "",
-   onFocus: () => {},
-   placeholder: "Enter text here",
-} as const;
+export * from "./types";
 
-interface InputProps {
-   classname?: string;
-   onFocus?: any;
-   placeholder?: string;
-}
+export const Input: React.FC<InputProps> = ({
+   className = "",
+   placeholder = "Enter text here",
+   onChange,
+   variant = "default",
+   ...props
+}) => {
+   const handleOnChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
+      onChange?.({ name: e.target.name, value: e.target.value });
+   };
 
-const Input: React.FC<InputProps> = ({ classname, onFocus, placeholder } = defaultProps) => {
-   return (
-      <div className={`input--combobox ${classname}`}>
-         <input placeholder={placeholder} onFocus={onFocus} />
-      </div>
-   );
+   const renderInput = () => {
+      switch (variant) {
+         case "combobox":
+            return (
+               <div className={clx(styles["input--combobox"], className)}>
+                  <input placeholder={placeholder} onChange={handleOnChange} {...props} />
+               </div>
+            );
+         case "default":
+         default:
+            return <input placeholder={placeholder} onChange={handleOnChange} {...props} />;
+      }
+   };
+
+   return <>{renderInput()}</>;
 };
-
-export default Input;

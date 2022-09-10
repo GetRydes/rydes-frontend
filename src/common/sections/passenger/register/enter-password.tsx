@@ -11,12 +11,18 @@ export const EnterPassword: React.FC<EnterPasswordProps> = () => {
       <RegisterForm.ItemContainer
          heading="Create your account password"
          text="Your password must be at least 8 characters long and contain at least one letter and one digit"
+         onGoBack={() => {
+            setSearchParams({
+               step: "2",
+               state: "phone-number",
+            });
+         }}
       >
          <FormBuilder
             controls={passwordControls}
             onSubmit={() => {
                setSearchParams({
-                  step: "5",
+                  step: "4",
                });
             }}
             submitButtonLabel="Join Rydes"

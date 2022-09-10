@@ -7,4 +7,5 @@ export interface RegisterFormSubcomponents {
 export interface ItemContainerProps {
    heading: string;
    text?: string;
+   onGoBack?: () => void;
 }

@@ -2,7 +2,7 @@ import React from "react";
 import { useAppContext } from "../../../store";
 import { actionSetFormItem } from "../../../store/actions/form.action";
 import { Button } from "../../elements";
-import FormElement from "../form-element";
+import { FormElement } from "../form-element";
 import { FormBuilderProps } from "./types";
 
 const FormBuilder: React.FC<FormBuilderProps> = ({

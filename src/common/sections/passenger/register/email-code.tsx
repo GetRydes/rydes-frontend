@@ -1,16 +1,44 @@
-import { useSearchParams } from "react-router-dom";
+import { useEffect } from "react";
+import clx from "classnames";
+import { BsArrowRight } from "react-icons/bs";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { useAppContext } from "../../../../store";
 import { FormBuilder } from "../../../components";
 import { emailCodeFormControls } from "./register.controls";
 import { RegisterForm } from "./form-container";
 import { EmailCodeProps } from "./register.types";
+import { actionSetFormItem } from "../../../../store/actions/form.action";
+import registerStyles from "./register.module.scss";
 
 export const EmailCode: React.FC<EmailCodeProps> = () => {
-   const [{ form }] = useAppContext();
+   const navigate = useNavigate();
+   const [{ form }, dispatch] = useAppContext();
    const [, setSearchParams] = useSearchParams();
 
+   useEffect(() => {
+      if (form?.countdown && form?.countdown > 0) {
+         setTimeout(
+            () => dispatch(actionSetFormItem({ name: "countdown", value: form.countdown - 1 })),
+            1000,
+         );
+      }
+   }, [form?.countdown]);
+
+   useEffect(() => {
+      if (!form.email) navigate("/passenger/register", { replace: true });
+      dispatch(actionSetFormItem({ name: "countdown", value: 15 }));
+   }, []);
+
    return (
-      <RegisterForm.ItemContainer heading={` Enter the 4-digit code sent to you at ${form.email}`}>
+      <RegisterForm.ItemContainer
+         heading={` Enter the 4-digit code sent to you at ${form.email}`}
+         onGoBack={() => {
+            setSearchParams({
+               step: "1",
+               state: "phone-number",
+            });
+         }}
+      >
          <FormBuilder
             controls={emailCodeFormControls}
             onSubmit={() => {
@@ -21,9 +49,21 @@ export const EmailCode: React.FC<EmailCodeProps> = () => {
             }}
             submitButtonLabel="Join Rydes"
          />
-         <div>I havent received a code (0.04)</div>
-         {/* shows once timeout has expired */}
-         <div>Resend </div>
+         <div className={registerStyles.bottom}>
+            {form.countdown > 0 && true ? (
+               <div className={clx(registerStyles["no-code"], registerStyles.disabled)}>
+                  <span>I haven't received a code</span>&nbsp;
+                  <span>
+                     ({form.countdown ? `0:${String(form.countdown).padStart(2, "0")}` : `0:00`})
+                  </span>
+               </div>
+            ) : (
+               <div className={clx(registerStyles["no-code"], registerStyles.resend)}>
+                  <span className={registerStyles.pointer}>Resend code</span>
+                  <BsArrowRight />
+               </div>
+            )}
+         </div>
       </RegisterForm.ItemContainer>
    );
 };

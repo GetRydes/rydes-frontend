@@ -1,16 +1,11 @@
-import { Dispatch, useContext } from "react";
 import { useNavigate } from "react-router";
-import { AppStateContext } from "../../../../../store";
-import { actionSetCurrentPassenger } from "../../../../../store/actions/passenger.action";
-import { actionSetLoading } from "../../../../../store/actions/root.action";
-import { ActionProps } from "../../../../../store/actions/types";
-import { StateProps } from "../../../../../store/models/types";
+import { useAppContext, actionSetLoading, actionSetCurrentPassenger } from "../../../../../store";
 import { PASSENGER_ACCESS_TOKEN, PASSENGER_REFRESH_TOKEN } from "../../../../../utils/constants";
 import TokenService from "../../../../../utils/token";
 
 export const useStateInitializer = () => {
    const navigate = useNavigate();
-   const [, dispatch] = useContext<[StateProps, Dispatch<ActionProps>]>(AppStateContext);
+   const [, dispatch] = useAppContext();
 
    return (props: { type: string; data: any }) => {
       switch (props.type) {

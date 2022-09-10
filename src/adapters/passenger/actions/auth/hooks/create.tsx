@@ -1,10 +1,7 @@
 import { AxiosError } from "axios";
 import { Dispatch, useContext } from "react";
 import { Notify } from "../../../../../common/components";
-import { AppStateContext } from "../../../../../store";
-import { actionSetLoading } from "../../../../../store/actions/root.action";
-import { ActionProps } from "../../../../../store/actions/types";
-import { StateProps } from "../../../../../store/models/types";
+import { AppStateContext, ActionProps, StateProps, actionSetLoading } from "../../../../../store";
 import passengerClient from "../../../../clients/rest/passenger";
 import { useStateInitializer } from "./get";
 
