@@ -1,4 +1,4 @@
-import { StateProps } from "../../models/types";
+import { StateProps } from "../../types";
 import { RootActionProps } from "./types";
 
 export const rootReducer = (state: StateProps, action: RootActionProps): StateProps => {

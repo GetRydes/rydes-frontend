@@ -1,0 +1,56 @@
+.heading {
+   margin: 20px 0 15px 0;
+   font-style: normal;
+   font-weight: 700;
+   font-size: 20px;
+}
+
+.text {
+   margin-bottom: 30px;
+   font-size: 14px;
+   line-height: 1.5;
+}
+
+.bottom {
+   margin-top: 15px;
+}
+
+.no-code {
+   background: #eee;
+   border-radius: 10px;
+   padding: 5px 10px;
+   width: fit-content;
+
+   &.disabled {
+      opacity: 0.6;
+      pointer-events: none;
+   }
+
+   &.resend {
+      padding: 5px 15px;
+      color: #444;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      span {
+         display: block;
+      }
+   }
+
+   span {
+      font-size: 13px;
+
+      &.pointer {
+         cursor: pointer;
+      }
+   }
+}
+
+.back-arrow {
+   background-color: #eee;
+   padding: 10px 10px 5px;
+   width: fit-content;
+   border-radius: 50%;
+   cursor: pointer;
+}

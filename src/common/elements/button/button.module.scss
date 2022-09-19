@@ -62,6 +62,12 @@
       }
    }
 
+   &.outlined {
+      background: #fff;
+      border: 1px solid #222;
+      color: #222;
+   }
+
    &.loading {
       opacity: 0.7;
 
@@ -83,7 +89,7 @@
    &:active,
    &:focus {
       outline: none !important;
-      border: none !important;
+      // border: none !important;
    }
 
    &.block {

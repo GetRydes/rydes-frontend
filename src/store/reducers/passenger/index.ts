@@ -1,4 +1,4 @@
-import { StateProps } from "../../models/types";
+import { StateProps } from "../../types";
 import { PassengerActionProps } from "./types";
 
 export const passengerReducer = (state: StateProps, action: PassengerActionProps) => {

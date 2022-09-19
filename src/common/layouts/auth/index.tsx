@@ -5,7 +5,7 @@ import { AuthLayoutProps } from "./types";
 import { routes } from "./data";
 import styles from "./auth.module.scss";
 
-const AuthLayout: React.FC<AuthLayoutProps> = ({ children, className }) => {
+export const AuthLayout: React.FC<AuthLayoutProps> = ({ children, className }) => {
    const { pathname } = useLocation();
 
    return (
@@ -42,4 +42,4 @@ const AuthLayout: React.FC<AuthLayoutProps> = ({ children, className }) => {
    );
 };
 
-export default AuthLayout;
+export * from "./components";

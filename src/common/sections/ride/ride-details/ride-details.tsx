@@ -14,11 +14,16 @@ const RideDetails = () => {
          </div>
          <div className="ride-details--middle">
             <div className="input-fields">
-               <Input onFocus={() => setFormState(0)} placeholder="Enter pickup location" />
                <Input
-                  classname="destination"
+                  onFocus={() => setFormState(0)}
+                  placeholder="Enter pickup location"
+                  name="pickup"
+               />
+               <Input
+                  className="destination"
                   onFocus={() => setFormState(1)}
                   placeholder="Enter destination"
+                  name="destination"
                />
                <div className="input-fields--icons"></div>
             </div>
