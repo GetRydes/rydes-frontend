@@ -2,8 +2,8 @@ import React from "react";
 import { useAppContext } from "../../../store";
 import { actionSetFormItem } from "../../../store/actions/form.action";
 import { Button } from "../../elements";
-import { FormElement } from "../form-element";
-import { FormBuilderProps } from "./types";
+import { FormElement } from "./form-element";
+import { ElementCommonProps, FormBuilderProps } from "./types";
 
 const FormBuilder: React.FC<FormBuilderProps> = ({
    controls,
@@ -21,8 +21,8 @@ const FormBuilder: React.FC<FormBuilderProps> = ({
       );
    };
 
-   const onChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
-      dispatch(actionSetFormItem({ name: e.target.name, value: e.target.value }));
+   const onChange: ElementCommonProps["onChange"] = (data) => {
+      dispatch(actionSetFormItem(data));
    };
 
    const displayControls = () => {

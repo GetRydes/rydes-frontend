@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import clx from "classnames";
 import { BsArrowRight } from "react-icons/bs";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { createSearchParams, useNavigate } from "react-router-dom";
 import { useAppContext } from "../../../../store";
 import { FormBuilder } from "../../../components";
 import { emailCodeFormControls } from "./register.controls";
@@ -13,7 +13,6 @@ import registerStyles from "./register.module.scss";
 export const EmailCode: React.FC<EmailCodeProps> = () => {
    const navigate = useNavigate();
    const [{ form }, dispatch] = useAppContext();
-   const [, setSearchParams] = useSearchParams();
 
    useEffect(() => {
       if (form?.countdown && form?.countdown > 0) {
@@ -33,21 +32,27 @@ export const EmailCode: React.FC<EmailCodeProps> = () => {
       <RegisterForm.ItemContainer
          heading={` Enter the 4-digit code sent to you at ${form.email}`}
          onGoBack={() => {
-            setSearchParams({
-               step: "1",
-               state: "phone-number",
+            navigate({
+               pathname: "/passenger/register",
+               search: `?${createSearchParams({
+                  step: "1",
+                  state: "phone-number",
+               })}`,
             });
          }}
       >
          <FormBuilder
             controls={emailCodeFormControls}
             onSubmit={() => {
-               setSearchParams({
-                  step: "3",
-                  state: "phone-number",
+               navigate({
+                  pathname: "/passenger/register",
+                  search: `?${createSearchParams({
+                     step: "3",
+                     state: "phone-number",
+                  })}`,
                });
             }}
-            submitButtonLabel="Join Rydes"
+            submitButtonLabel="Next"
          />
          <div className={registerStyles.bottom}>
             {form.countdown > 0 && true ? (

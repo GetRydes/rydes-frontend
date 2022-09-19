@@ -1,7 +1,4 @@
 import { ElementCommonProps } from "../../components";
 
-export type InputProps = Omit<
-   React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
-   "onChange"
-> &
+export type InputProps = Omit<React.InputHTMLAttributes<HTMLInputElement>, "onChange" | "name"> &
    ElementCommonProps & { variant?: "default" | "combobox" | "code" };

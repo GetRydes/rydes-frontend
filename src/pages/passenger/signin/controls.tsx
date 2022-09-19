@@ -6,6 +6,7 @@ export const loginFormControls = (
 ) => [
    {
       label: "Email Address",
+      type: "input",
       properties: {
          type: "email",
          name: "email",
@@ -20,6 +21,7 @@ export const loginFormControls = (
    },
    {
       label: "Password",
+      type: "input",
       properties: {
          type: "password",
          name: "password",

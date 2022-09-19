@@ -20,7 +20,7 @@ export const EnterNames: React.FC<EnterNamesProps> = () => {
                   state: "enter-names",
                });
             }}
-            submitButtonLabel="Join Rydes"
+            submitButtonLabel="Next"
          />
       </RegisterForm.ItemContainer>
    );

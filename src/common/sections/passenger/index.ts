@@ -4,3 +4,4 @@ export * from "./register/form-container";
 export * from "./register/enter-password";
 export * from "./register/complete";
 export * from "./register/enter-names";
+export * from "./register/phone-number";

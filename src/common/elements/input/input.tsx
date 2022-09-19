@@ -20,7 +20,13 @@ export const Input: React.FC<InputProps> = ({
       switch (variant) {
          case "combobox":
             return (
-               <div className={clx(styles["input--combobox"], className)}>
+               <div
+                  className={clx(
+                     styles["input--combobox"],
+                     { [styles.className]: className },
+                     className,
+                  )}
+               >
                   <input placeholder={placeholder} onChange={handleOnChange} {...props} />
                </div>
             );

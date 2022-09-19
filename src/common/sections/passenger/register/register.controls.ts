@@ -3,6 +3,7 @@ import styles from "./form.module.scss";
 export const registerFormControls = [
    {
       label: "Email Address",
+      type: "input",
       properties: {
          type: "email",
          name: "email",
@@ -17,6 +18,7 @@ export const registerFormControls = [
 
 export const passwordControls = [
    {
+      type: "input",
       properties: {
          type: "password",
          name: "password",
@@ -31,22 +33,23 @@ export const passwordControls = [
 
 export const emailCodeFormControls = [
    {
+      type: "code",
       properties: {
-         type: "code",
          name: "emailCode",
          placeholder: "1234",
          required: true,
          classNames: {
             container: styles["form-content"],
          },
+         numInputs: 4,
       },
    },
 ];
 
 export const nameControls = [
    {
+      type: "input",
       properties: {
-         type: "text",
          name: "firstName",
          placeholder: "John",
          required: true,
@@ -56,10 +59,25 @@ export const nameControls = [
       },
    },
    {
+      type: "input",
       properties: {
-         type: "text",
          name: "lastName",
          placeholder: "Doe",
+         required: true,
+         classNames: {
+            container: styles["form-content"],
+         },
+      },
+   },
+];
+
+export const phoneNumberControls = [
+   {
+      type: "input",
+      properties: {
+         name: "phoneNumber",
+         type: "number",
+         placeholder: "2345678904859",
          required: true,
          classNames: {
             container: styles["form-content"],

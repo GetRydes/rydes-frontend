@@ -1,3 +1,9 @@
+import { RegisterForm } from "./form-container";
+
 export const Complete = () => {
-   return <>You are all set</>;
+   return (
+      <RegisterForm.ItemContainer onGoBack={() => {}} heading="">
+         <>You are all set</>
+      </RegisterForm.ItemContainer>
+   );
 };

@@ -1,33 +1,34 @@
 import { createSearchParams, useNavigate } from "react-router-dom";
-import { EnterPasswordProps } from "./register.types";
 import { FormBuilder } from "../../../components";
-import { passwordControls } from "./register.controls";
 import { RegisterForm } from "./form-container";
+import { phoneNumberControls } from "./register.controls";
+import { PhoneNumberProps } from "./register.types";
 
-export const EnterPassword: React.FC<EnterPasswordProps> = () => {
+export const PhoneNumber: React.FC<PhoneNumberProps> = () => {
    const navigate = useNavigate();
 
    return (
       <RegisterForm.ItemContainer
-         heading="Create your account password"
-         text="Your password must be at least 8 characters long and contain at least one letter and one digit"
+         heading="What's your name?"
+         text="Let us know how to properly address you"
          onGoBack={() => {
             navigate({
                pathname: "/passenger/register",
                search: `?${createSearchParams({
-                  step: "3",
+                  step: "2",
                   state: "phone-number",
                })}`,
             });
          }}
       >
          <FormBuilder
-            controls={passwordControls}
+            controls={phoneNumberControls}
             onSubmit={() => {
                navigate({
                   pathname: "/passenger/register",
                   search: `?${createSearchParams({
-                     step: "5",
+                     step: "4",
+                     state: "enter-names",
                   })}`,
                });
             }}

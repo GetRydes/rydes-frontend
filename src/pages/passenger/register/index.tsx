@@ -5,6 +5,7 @@ import {
    EmailCode,
    EnterNames,
    EnterPassword,
+   PhoneNumber,
    RegisterForm,
    SocialOrEmail,
 } from "../../../common/sections";
@@ -22,7 +23,7 @@ const Register = () => {
          case "3":
             // this is for phone number
             // user should be able to skip
-            return <EnterPassword />;
+            return <PhoneNumber />;
          case "4":
             return <EnterPassword />;
          case "5":
