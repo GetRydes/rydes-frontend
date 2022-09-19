@@ -2,7 +2,7 @@ export type FormActionProps = SetFormItemActionProps | SetFormDataActionProps;
 
 export interface SetFormItemActionProps {
    type: "SET_FORM_ITEM";
-   payload: { [key: string]: any };
+   payload: { name: string; value: any };
 }
 
 export interface SetFormDataActionProps {

@@ -8,7 +8,7 @@ export const DRIVER_ACCESS_TOKEN = "DRIVER_ACCESS_TOKEN";
 
 export const DRIVER_REFRESH_TOKEN = "DRIVER_REFRESH_TOKEN";
 
-export const DRIVER_ROUTE_PREFIX = "/drive";
+export const DRIVER_ROUTE_PREFIX = "/driver";
 
 export const RYDES_PASSENGER_USER_TYPE = "PASSENGER";
 

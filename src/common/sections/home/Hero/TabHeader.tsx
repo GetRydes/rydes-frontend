@@ -1,8 +1,10 @@
 import React from "react";
+import clx from "classnames";
 import { IconType } from "react-icons";
 import { AiFillCar } from "react-icons/ai";
 import { GiNetworkBars } from "react-icons/gi";
 import { MdRestaurant } from "react-icons/md";
+import styles from "./hero.module.scss";
 
 interface TabHeaderItemProps {
    Icon: IconType;
@@ -24,7 +26,7 @@ const TabHeader: React.FC<TabHeaderProps> = ({ activeTab, setActiveTab }) => {
       { title: "Eat", icon: MdRestaurant },
    ];
    return (
-      <div className="hero__inner-content--container__tabslist" role="tablist">
+      <div className={styles["hero__inner-content--container__tabslist"]} role="tablist">
          {tabHeaders.map(({ icon, title }, index) => (
             <TabHeaderItem
                Icon={icon}
@@ -46,15 +48,17 @@ const TabHeaderItem: React.FC<TabHeaderItemProps> = ({ Icon, title, index, onCli
          tabIndex={index}
          id="0"
          aria-selected={false}
-         className={`hero__inner-content--container__tab${isActive ? " active" : ""}`}
+         className={clx(styles["hero__inner-content--container__tab"], {
+            [styles.active]: isActive,
+         })}
          onClick={onClick}
       >
-         <div className="tab__content--container">
+         <div className={styles["tab__content--container"]}>
             <div>
-               <div className="tab__content--container__icon">
-                  <Icon className="icon" />
+               <div className={styles["tab__content--container__icon"]}>
+                  <Icon className={styles.icon} />
                </div>
-               <span className="tab__content--container__text">{title}</span>
+               <span className={styles["tab__content--container__text"]}>{title}</span>
             </div>
          </div>
       </div>

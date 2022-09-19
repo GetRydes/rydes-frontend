@@ -1,4 +1,4 @@
-import { StateProps } from "../../models/types";
+import { StateProps } from "../../types";
 import { FormActionProps } from "./types";
 
 export const formReducer = (state: StateProps, action: FormActionProps) => {

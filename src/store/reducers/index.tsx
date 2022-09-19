@@ -1,5 +1,5 @@
-import { ActionProps } from "../actions/types";
-import { StateProps } from "../models/types";
+import { ActionProps } from "../actions/action.types";
+import { StateProps } from "../types";
 import { rootReducer } from "./root";
 import { passengerReducer } from "./passenger";
 import { formReducer } from "./form";

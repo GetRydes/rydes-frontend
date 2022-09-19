@@ -1,0 +1,16 @@
+.not-found {
+   display: flex;
+   align-items: center;
+   height: calc(100vh - 111px);
+   justify-content: center;
+   background: #eee;
+}
+
+.container {
+   text-align: center;
+   transform: translateY(-111px);
+}
+
+.text {
+   font-size: 40;
+}
