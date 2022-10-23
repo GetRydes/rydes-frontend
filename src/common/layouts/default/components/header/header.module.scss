@@ -25,6 +25,12 @@
          }
       }
    }
+
+   @media (max-width: 640px) {
+      min-height: 111px;
+      display: flex;
+      align-items: center;
+   }
 }
 
 .header {
@@ -42,9 +48,23 @@
    align-items: center;
    justify-content: space-between;
    width: 400px;
+}
 
+.mw-md {
    @media screen and (max-width: 760px) {
-      display: none;
+      display: none !important;
+   }
+}
+
+.mw-sm {
+   @media screen and (max-width: 640px) {
+      display: none !important;
+   }
+}
+
+.w-sm {
+   @media screen and (min-width: 640px) {
+      display: none !important;
    }
 }
 

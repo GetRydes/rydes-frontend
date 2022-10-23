@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import clx from "classnames";
+import { GiHamburgerMenu } from "react-icons/gi";
 import styles from "./header.module.scss";
 import { HeaderProps } from "./types";
 import { Button } from "../../../../elements";
@@ -19,14 +20,14 @@ const Header: React.FC<HeaderProps> = ({
             <div className={styles.logo}>
                <Link to="/">rydes.</Link>
             </div>
-            <div className={styles["nav-links"]}>
+            <div className={clx(styles["nav-links"], styles["mw-md"])}>
                {navLinks.map(({ path, name }, index) => (
                   <nav key={index} className={styles.nav}>
                      <NavLink to={path}>{name}</NavLink>
                   </nav>
                ))}
             </div>
-            <div className={styles["action-links"]}>
+            <div className={clx(styles["action-links"], styles["mw-sm"])}>
                <Button
                   variant="outlined"
                   className={styles["sign-in"]}
@@ -51,6 +52,7 @@ const Header: React.FC<HeaderProps> = ({
                   Get started
                </Button>
             </div>
+            <GiHamburgerMenu size={22} className={styles["w-sm"]} />
          </div>
       </header>
    );
