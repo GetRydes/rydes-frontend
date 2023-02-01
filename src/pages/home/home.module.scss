@@ -4,5 +4,135 @@
 }
 
 .layout-container {
-   background-color: #eee;
+   // background-color: #eee;
+}
+
+.phone-block {
+   overflow: hidden;
+
+   @media (max-width: 959px) {
+      padding-bottom: 50px;
+   }
+
+   .bg-container {
+      margin: auto;
+      max-width: 1248px;
+      padding: 0 30px;
+      position: relative;
+      z-index: 3;
+
+      h2 {
+         font-size: 34px;
+         line-height: 40px;
+      }
+
+      p {
+         color: #818391;
+         margin-top: 1rem;
+
+         @media (min-width: 768px) {
+            margin-top: 2rem;
+         }
+
+         @media (min-width: 968px) {
+            font-size: 18px;
+            line-height: 27px;
+         }
+      }
+   }
+
+   .image-container {
+      max-width: 1440px;
+      position: relative;
+      margin: auto;
+      padding: 0;
+
+      .cover-image {
+         background-image: url("./index-phone-mobile.png");
+         background-position: 50%;
+         background-repeat: no-repeat;
+         background-size: contain;
+         height: 126vw;
+         max-height: 749px;
+         width: 100%;
+         z-index: 5;
+         position: relative;
+
+         @media (min-width: 454px) {
+            background-image: -webkit-image-set(url("./index-phone.webp") 1x);
+         }
+      }
+
+      .bg-circle {
+         border-radius: 50%;
+         position: absolute !important;
+         z-index: 2;
+
+         @media (min-width: 960px) {
+            display: none;
+         }
+      }
+
+      .circle-top {
+         background-color: #d9fde5;
+         height: 150px;
+         right: -95px;
+         top: 100px;
+         width: 150px;
+      }
+
+      .circle-bottom {
+         background-color: #d9fde5;
+         height: 530px;
+         left: -180px;
+         top: 176px;
+         width: 530px;
+      }
+   }
+
+   @media (min-width: 960px) {
+      overflow: visible;
+
+      .content-wrapper {
+         background-color: #fff;
+      }
+
+      .block-content {
+         background-color: #d9fde5;
+         padding-bottom: 175px;
+         padding-top: 140px;
+         margin-top: 236px;
+         position: relative;
+      }
+
+      .bg-container {
+         .row {
+            &::after {
+               clear: both;
+               content: "";
+               display: table;
+            }
+         }
+
+         .left {
+            width: 50%;
+
+            h2 {
+               font-size: 48px;
+               line-height: 56px;
+            }
+         }
+      }
+
+      .image-container {
+         .cover-image {
+            height: 749px;
+            max-width: 55%;
+            position: absolute;
+            right: 20px;
+            top: -235px;
+            width: 769px;
+         }
+      }
+   }
 }

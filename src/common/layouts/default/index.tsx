@@ -4,6 +4,7 @@ import Header from "./components/header";
 import styles from "./default.module.scss";
 import { navLinks } from "./data";
 import ProfileSelector from "./components/profile-selector";
+import { Footer } from "./components";
 
 export interface LayoutProps {
    children: React.ReactNode;
@@ -59,7 +60,10 @@ export const DefaultLayout: React.FC<LayoutProps> = ({
             navLinks={navLinks}
             setShowProfileSelector={setShowProfileSelector}
          />
-         <div className={styles.children}>{children}</div>
+         <div className={styles.children}>
+            {children}
+            <Footer />
+         </div>
       </div>
    );
 };
