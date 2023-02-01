@@ -35,6 +35,12 @@
          background-color: white;
          padding-top: 1px;
 
+         @media (max-width: 540px) {
+            max-width: 90vw;
+            overflow: hidden;
+            margin: 0 auto;
+         }
+
          .layout--auth__signin {
             border: 0px;
 
