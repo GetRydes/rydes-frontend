@@ -9,8 +9,4 @@ export const navLinks = [
       path: `${DRIVER_ROUTE_PREFIX}/register`,
       name: "Become a driver",
    },
-   {
-      path: "/about",
-      name: "About",
-   },
 ];

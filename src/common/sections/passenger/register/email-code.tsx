@@ -21,11 +21,13 @@ export const EmailCode: React.FC<EmailCodeProps> = () => {
             1000,
          );
       }
+      // eslint-disable-next-line
    }, [form?.countdown]);
 
    useEffect(() => {
       if (!form.email) navigate("/passenger/register", { replace: true });
       dispatch(actionSetFormItem({ name: "countdown", value: 15 }));
+      // eslint-disable-next-line
    }, []);
 
    return (

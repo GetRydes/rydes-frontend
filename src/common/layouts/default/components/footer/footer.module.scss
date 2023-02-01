@@ -1,0 +1,38 @@
+.footer {
+   background: #060809;
+   color: #fff;
+   width: 100%;
+   padding: 50px 0px;
+}
+
+.logo {
+   font-weight: 600;
+   a {
+      font-size: 40px;
+   }
+}
+
+.container {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   width: 100%;
+   padding: 0px 30px;
+   max-width: 1800px;
+   margin: 0 auto;
+   margin-bottom: 20px;
+}
+
+.copyright {
+   margin: 0 auto;
+   width: fit-content;
+}
+
+.heart {
+   color: #e31b23;
+}
+
+.owner {
+   color: #0d9648;
+   font-weight: 600;
+}
