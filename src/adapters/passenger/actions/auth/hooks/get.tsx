@@ -11,14 +11,15 @@ export const useStateInitializer = () => {
       switch (props.type) {
          case "login":
             // dispatch({ type: "SET_TOKENS", payload: props.data.login });
-            const expiry_date = new Date();
-            expiry_date.setSeconds(expiry_date.getSeconds() + 300);
+            const accessTokenExpiryDate = new Date(props.data.data.accessTokenExpiresIn);
+            const refreshTokenExpiryDate = new Date(props.data.data.refreshTokenExpiresIn);
+
             TokenService.updateLocalToken(PASSENGER_ACCESS_TOKEN, props.data.data.accessToken, {
-               expires: expiry_date,
+               expires: accessTokenExpiryDate,
                path: "/",
             });
             TokenService.updateLocalToken(PASSENGER_REFRESH_TOKEN, props.data.data.refreshToken, {
-               expires: expiry_date,
+               expires: refreshTokenExpiryDate,
                path: "/",
             });
             navigate("/passenger/ride");

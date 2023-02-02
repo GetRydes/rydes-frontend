@@ -16,7 +16,9 @@ export const useLogin = () => {
          stateInitializer({ type: "login", data });
       } catch (err) {
          if (err instanceof AxiosError && err.response) {
-            Notify.error(err.response.data.message);
+            if (err.response.status === 401) Notify.error("Incorrect email or password");
+            else if (err.response.data) Notify.error(err.response.data.message);
+            else Notify.error("Something went wrong, Please try again later");
          }
          dispatch(actionSetLoading(false));
       }

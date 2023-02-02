@@ -4,7 +4,7 @@ import { IconType } from "react-icons";
 import { AiFillCar } from "react-icons/ai";
 import { GiNetworkBars } from "react-icons/gi";
 import { MdRestaurant } from "react-icons/md";
-import styles from "./hero.module.scss";
+import styles from "./TabHeader.module.scss";
 
 interface TabHeaderItemProps {
    Icon: IconType;
@@ -26,7 +26,7 @@ const TabHeader: React.FC<TabHeaderProps> = ({ activeTab, setActiveTab }) => {
       { title: "Eat", icon: MdRestaurant },
    ];
    return (
-      <div className={styles["hero__inner-content--container__tabslist"]} role="tablist">
+      <div className={styles["tabslist"]} role="tablist">
          {tabHeaders.map(({ icon, title }, index) => (
             <TabHeaderItem
                Icon={icon}
@@ -48,7 +48,7 @@ const TabHeaderItem: React.FC<TabHeaderItemProps> = ({ Icon, title, index, onCli
          tabIndex={index}
          id="0"
          aria-selected={false}
-         className={clx(styles["hero__inner-content--container__tab"], {
+         className={clx(styles["tab"], {
             [styles.active]: isActive,
          })}
          onClick={onClick}
