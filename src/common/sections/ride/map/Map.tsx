@@ -12,8 +12,8 @@ const AnyReactComponent = ({ text }: any) => (
 
 const Maps = () => {
    const [position, setPosition] = useState<{ lat: number; lng: number }>({
-      lat: 6.5118867,
-      lng: 3.3510828,
+      lat: 51.503399,
+      lng: -0.119519,
    });
    const [loading, setLoading] = useState<boolean>(true);
 

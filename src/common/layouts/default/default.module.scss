@@ -7,3 +7,8 @@
    position: relative;
    top: 111px;
 }
+
+.no-scroll {
+   overflow: hidden;
+   max-height: calc(100vh - 120px);
+}

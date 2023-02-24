@@ -7,7 +7,16 @@ export * from "./actions";
 export * from "./reducers";
 export * from "./types";
 
-export const initialStoreState = { me: null, form: {}, loading: false };
+export const initialStoreState = {
+   me: null,
+   form: {
+      showProfileSelector: {
+         name: "signin",
+         visible: false,
+      },
+   },
+   loading: false,
+};
 
 export const AppStateContext = createContext<[StateProps, Dispatch<ActionProps>]>([
    initialStoreState,
