@@ -1,0 +1,118 @@
+.content {
+   position: relative;
+   display: flex;
+   width: 100%;
+   background-color: #ffffff;
+   box-sizing: border-box;
+   flex-direction: column;
+
+   @media screen and (min-width: 320px) {
+      padding: 24px;
+   }
+
+   @media screen and (min-width: 600px) {
+      padding: 32px;
+   }
+
+   @media screen and (min-width: 1136px) {
+      padding: 48px;
+   }
+
+   .title {
+      display: flex;
+      flex-wrap: nowrap;
+
+      h2 {
+         margin: 0;
+         letter-spacing: -2px;
+         line-height: 44px;
+         font-size: 36px;
+         font-weight: 500;
+         width: 100%;
+
+         @media screen and (min-width: 600px) {
+            line-height: 52px;
+            font-weight: 500;
+            font-size: 44px;
+         }
+
+         @media screen and (min-width: 1136px) {
+            line-height: 64px;
+            font-weight: 500;
+            font-size: 52px;
+         }
+      }
+   }
+
+   .location__fields {
+      margin-top: 31px;
+      margin-bottom: 13px;
+      flex: 0 0 auto;
+      position: relative;
+
+      &--icons {
+         left: 22px;
+         bottom: 33px;
+         top: 33px;
+         background-color: #000000;
+         position: absolute;
+         width: 1px;
+
+         &::before {
+            background-color: #f6f6f6;
+            border: 1px solid #000000;
+            bottom: -10px;
+            height: 5px;
+            width: 5px;
+            left: -3px;
+            position: absolute;
+            content: "";
+         }
+
+         &::after {
+            background-color: #f6f6f6;
+            border: 1px solid #000000;
+            border-radius: 50%;
+            top: -10px;
+            height: 6px;
+            width: 6px;
+            left: -3px;
+            position: absolute;
+            content: "";
+         }
+      }
+
+      .destination {
+         margin-top: 8px;
+      }
+   }
+
+   .action__buttons {
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      display: flex;
+
+      &--request {
+         margin-right: 24px;
+         margin-top: 19px;
+
+         & > div {
+            &:read-only {
+               box-sizing: border-box;
+            }
+            padding: 14px 25px;
+            margin-top: 12px;
+            color: #ffffff;
+            background-color: #0d9648;
+            font-size: 16px;
+            border-radius: 0;
+            transition-timing-function: cubic-bezier(0, 0, 1, 1);
+            transition-duration: 200ms;
+            transition-property: background;
+            -webkit-appearance: none;
+            line-height: 20px;
+            font-weight: 500;
+         }
+      }
+   }
+}

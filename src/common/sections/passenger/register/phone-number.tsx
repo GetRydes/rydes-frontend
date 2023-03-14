@@ -9,7 +9,7 @@ export const PhoneNumber: React.FC<PhoneNumberProps> = () => {
 
    return (
       <RegisterForm.ItemContainer
-         heading="What's your name?"
+         heading="Enter your phone number?"
          text="Let us know how to properly address you"
          onGoBack={() => {
             navigate({
