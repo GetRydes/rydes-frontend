@@ -4,7 +4,6 @@ import { PASSENGER_ACCESS_TOKEN, PASSENGER_REFRESH_TOKEN } from "../../../../../
 import TokenService from "../../../../../utils/token";
 
 export const useStateInitializer = () => {
-   const navigate = useNavigate();
    const [, dispatch] = useAppContext();
 
    return (props: { type: string; data: any }) => {
@@ -22,7 +21,6 @@ export const useStateInitializer = () => {
                expires: refreshTokenExpiryDate,
                path: "/",
             });
-            navigate("/passenger/ride");
             break;
          case "logout":
             dispatch(actionSetCurrentPassenger(null));
