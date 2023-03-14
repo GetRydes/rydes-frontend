@@ -1,0 +1,120 @@
+.tabslist {
+   z-index: 2;
+   text-align: center;
+   opacity: 0.98;
+   flex-wrap: nowrap;
+   flex-direction: row;
+   border-bottom: 1px solid #eeeeee;
+   box-sizing: border-box;
+   background-color: #ffffff;
+   -webkit-box-orient: horizontal;
+   -webkit-box-direction: normal;
+   flex-direction: row;
+   -webkit-box-align: center;
+   align-items: center;
+   display: flex;
+   padding: 0;
+   margin: 0;
+   position: relative;
+   &::-webkit-scrollbar {
+      display: none;
+   }
+
+   @media screen and (min-width: 320px) {
+      overflow-y: scroll;
+      -webkit-box-pack: start;
+      justify-content: space-evenly;
+   }
+
+   @media screen and (min-width: 600px) {
+      overflow-y: scroll;
+      -webkit-box-pack: start;
+      justify-content: space-evenly;
+   }
+
+   @media screen and (min-width: 1136px) {
+      -webkit-box-pack: justify;
+      justify-content: space-around;
+   }
+}
+
+.tab {
+   transition: color 200ms ease;
+   display: inline-block;
+   border-bottom: none;
+   outline-offset: -3px;
+   box-sizing: border-box;
+   line-height: 20px;
+   font-size: 14px;
+   padding: 0;
+   margin: 0;
+   position: relative;
+   border: none;
+   &:hover {
+      color: #000000;
+   }
+   &:focus {
+      outline-offset: -2px;
+      color: #545454;
+      outline: none;
+   }
+
+   &.active {
+      border-bottom: 3px solid black;
+   }
+
+   .tab__content--container {
+      transition: all 100ms cubic-bezier(0.8, 0.2, 0.6, 1);
+      padding: 28px 12px 20px;
+      cursor: pointer;
+
+      @media screen and (min-width: 320px) {
+         width: 105px;
+      }
+
+      @media screen and (min-width: 600px) {
+         width: 105px;
+      }
+
+      @media screen and (min-width: 1136px) {
+         min-width: 105px;
+      }
+   }
+
+   .tab__content--container__icon {
+      margin: 0 auto;
+      @media screen and (min-width: 320px) {
+         width: 18px;
+         height: 18px;
+      }
+
+      @media screen and (min-width: 600px) {
+         width: 18px;
+         height: 18px;
+      }
+
+      @media screen and (min-width: 1136px) {
+         width: 24px;
+         height: 24px;
+      }
+   }
+
+   .icon {
+      transition: all 250ms ease;
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+   }
+
+   .tab__content--container__text {
+      margin-top: 8px;
+      line-height: 16px;
+      font-size: 14px;
+      font-weight: 500;
+      display: block;
+
+      @media screen and (min-width: 320px) {
+         min-height: 30px;
+      }
+   }
+}

@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import clx from "classnames";
 import Header from "./components/header";
 import styles from "./default.module.scss";
 import { navLinks } from "./data";
 import ProfileSelector from "./components/profile-selector";
 import { Footer } from "./components";
+import { actionSetFormItem, useAppContext } from "../../../store";
+import { useLocation } from "react-router";
 
 export interface LayoutProps {
    children: React.ReactNode;
@@ -17,10 +19,23 @@ export const DefaultLayout: React.FC<LayoutProps> = ({
    classNames = {},
    children,
 }) => {
-   const [showProfileSelector, setShowProfileSelector] = useState({
-      name: "signin",
-      visible: false,
-   });
+   const [{ form }, dispatch] = useAppContext();
+   const location = useLocation();
+
+   useEffect(() => {
+      if (form.showProfileSelector.visible) {
+         dispatch(
+            actionSetFormItem({
+               name: "showProfileSelector",
+               value: {
+                  ...form.showProfileSelector,
+                  visible: false,
+               },
+            }),
+         );
+      }
+   // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, [location]);
 
    return (
       <div
@@ -29,10 +44,8 @@ export const DefaultLayout: React.FC<LayoutProps> = ({
          })}
       >
          <ProfileSelector
-            showProfileSelector={showProfileSelector.visible}
-            setShowProfileSelector={setShowProfileSelector}
             options={
-               showProfileSelector.name === "signin"
+               form.showProfileSelector.name === "signin"
                   ? [
                        {
                           text: "Sign in to drive",
@@ -55,12 +68,12 @@ export const DefaultLayout: React.FC<LayoutProps> = ({
                     ]
             }
          />
-         <Header
-            hasMobileOverlayNav={hasMobileOverlayNav}
-            navLinks={navLinks}
-            setShowProfileSelector={setShowProfileSelector}
-         />
-         <div className={styles.children}>
+         <Header hasMobileOverlayNav={hasMobileOverlayNav} navLinks={navLinks} />
+         <div
+            className={clx(styles.children, {
+               [styles["no-scroll"]]: form.showProfileSelector.visible,
+            })}
+         >
             {children}
             <Footer />
          </div>
